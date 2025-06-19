@@ -927,7 +927,7 @@ footer {
   text-decoration: none;
 }
 
-.heading .title-head:after {
+/* .heading .title-head:after {
   content: "";
   position: absolute;
   width: 80px;
@@ -936,7 +936,7 @@ footer {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-}
+} */
 
 .margin-top-30 {
   margin-top: 30px;
