@@ -432,7 +432,7 @@ li {
 }
 
 .home-slider + .section_register {
-  margin-top: -10title-headpx; /* Negative margin to fix any 1px gap issues in some browsers */
+  margin-top: -10px; /* Negative margin to fix any 1px gap issues in some browsers */
 }
 
 /* Registration Section */
