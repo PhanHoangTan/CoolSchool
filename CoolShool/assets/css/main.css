@@ -432,7 +432,7 @@ li {
 }
 
 .home-slider + .section_register {
-  margin-top: -10px; /* Negative margin to fix any 1px gap issues in some browsers */
+  margin-top: -10title-headpx; /* Negative margin to fix any 1px gap issues in some browsers */
 }
 
 /* Registration Section */
@@ -898,6 +898,174 @@ footer {
 
 @media (max-width: 480px) {
   .stat-box {
+    margin-bottom: 15px;
+  }
+}
+
+/* Education Section Styles */
+.awe-section-3 {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+
+.section_educate {
+  position: relative;
+}
+
+.heading .title-head {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+.heading .title-head a {
+  color: #ff72b4;
+  text-decoration: none;
+}
+
+.heading .title-head:after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 3px;
+  background-color: #ff72b4;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.a-center {
+  text-align: center;
+}
+
+.educate_index {
+  margin-bottom: 30px;
+}
+
+.myblogs {
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+}
+
+.myblogs:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.image-blog-left {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-blog-left img {
+  width: 100%;
+  height: auto;
+  transition: all 0.5s ease;
+  display: block;
+}
+
+.myblogs:hover .image-blog-left img {
+  transform: scale(1.05);
+}
+
+.content_blog {
+  padding: 20px;
+}
+
+.content_right h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.content_right h3 a {
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.content_right h3 a:hover {
+  color: #ff72b4;
+}
+
+.summary_item_blog p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* Owl Carousel custom styles */
+.owl-carousel .owl-item {
+  padding: 15px 0;
+}
+
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #333;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+  left: -20px;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+  right: -20px;
+}
+
+.owl-carousel .owl-nav button:hover {
+  background-color: #ff72b4;
+  color: #fff;
+}
+
+/* Responsive styles for education section */
+@media (max-width: 991px) {
+  .content_blog {
+    padding: 15px;
+  }
+
+  .content_right h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .heading .title-head {
+    font-size: 24px;
+  }
+
+  .educate_index {
     margin-bottom: 15px;
   }
 }

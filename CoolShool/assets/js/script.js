@@ -25,6 +25,26 @@ $(document).ready(function () {
     },
   });
 
+  // Initialize Owl Carousel for education section
+  $(".wrap_owl_blog").owlCarousel({
+    loop: false,
+    margin: 30,
+    nav: false,
+    dots: true,
+    autoplay: false,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 2,
+      },
+      1000: {
+        items: 3,
+      },
+    },
+  });
+
   // Smooth scroll to registration form when button is clicked
   $(".btn_scroll_register").on("click", function (e) {
     e.preventDefault();
