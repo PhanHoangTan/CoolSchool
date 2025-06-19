@@ -56,4 +56,65 @@ $(document).ready(function () {
   $(".nav-mobile-button").on("click", function () {
     $(".header-nav").slideToggle();
   });
+
+  // Smooth scroll for anchor links
+  $('a[href*="#"]')
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function (event) {
+      if (
+        location.pathname.replace(/^\//, "") ==
+          this.pathname.replace(/^\//, "") &&
+        location.hostname == this.hostname
+      ) {
+        var target = $(this.hash);
+        target = target.length
+          ? target
+          : $("[name=" + this.hash.slice(1) + "]");
+        if (target.length) {
+          event.preventDefault();
+          $("html, body").animate(
+            {
+              scrollTop: target.offset().top - 100,
+            },
+            1000
+          );
+        }
+      }
+    });
+
+  // Initialize datepicker if available
+  if ($.fn.datepicker) {
+    $(".tourmaster-datepicker").datepicker({
+      dateFormat: "dd MM yy",
+      changeMonth: true,
+      changeYear: true,
+      yearRange: "-100:+0",
+    });
+  }
 });
+
+// Function to prevent non-numerical input in phone field
+function preventNonNumericalInput(e) {
+  // Allow: backspace, delete, tab, escape, enter
+  if (
+    $.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
+    // Allow: Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+    (e.keyCode === 65 && e.ctrlKey === true) ||
+    (e.keyCode === 67 && e.ctrlKey === true) ||
+    (e.keyCode === 86 && e.ctrlKey === true) ||
+    (e.keyCode === 88 && e.ctrlKey === true) ||
+    // Allow: home, end, left, right
+    (e.keyCode >= 35 && e.keyCode <= 39)
+  ) {
+    // let it happen, don't do anything
+    return;
+  }
+  // Ensure that it is a number and stop the keypress
+  if (
+    (e.shiftKey || e.keyCode < 48 || e.keyCode > 57) &&
+    (e.keyCode < 96 || e.keyCode > 105)
+  ) {
+    e.preventDefault();
+  }
+}

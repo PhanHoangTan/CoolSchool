@@ -22,6 +22,10 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <!-- jQuery UI CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
     <!-- Custom CSS -->
     <link
       href="assets/css/main.css"
@@ -622,6 +626,171 @@
           </div>
         </section>
 
+        <!-- Đăng ký tuyển sinh online -->
+        <section class="awe-section-5">
+          <div class="section_make_appointment form_contact_footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 to_animate text-center animated fadeInUp">
+                  <div class="heading a-center">
+                    <h2><span>ĐĂNG KÝ TUYỂN SINH ONLINE</span></h2>
+                    <p class="padding-top-10">Thông tin học sinh</p>
+                  </div>
+                  <div
+                    class="form-wrapper columns_margin_bottom_20 columns_padding_15">
+                    <form
+                      accept-charset="UTF-8"
+                      action="https://cool-school.mysapo.net/contact"
+                      id="contact"
+                      method="post">
+                      <input name="FormType" type="hidden" value="contact" />
+                      <input name="utf8" type="hidden" value="true" />
+
+                      <p
+                        id="errorFills"
+                        style="margin-bottom: 10px; color: red"></p>
+                      <div
+                        id="emtry_contact"
+                        class="form-signup form_contact clearfix">
+                        <div class="row">
+                          <div
+                            class="col-xs-12 col-sm-6 col-md-4 form-builder-item">
+                            <fieldset class="form-group">
+                              <input
+                                class="form-control"
+                                type="text"
+                                autocomplete="off"
+                                name="contact[name]"
+                                id="name"
+                                placeholder="Họ tên học sinh"
+                                required="" />
+                            </fieldset>
+                          </div>
+                          <div
+                            class="col-xs-12 col-sm-6 col-md-4 form-builder-item gioitinh">
+                            <fieldset class="form-group">
+                              <input
+                                placeholder="Giới tính"
+                                type="text"
+                                autocomplete="off"
+                                class="form-control"
+                                value=""
+                                name="contact[Giới tính]" />
+                              <span class="input-group-addons"
+                                ><i class="fa fa-angle-down"></i
+                              ></span>
+                              <select name="gioitinh1">
+                                <option selected="selected">Giới tính</option>
+                                <option value="Nam">Nam</option>
+                                <option value="Nữ">Nữ</option>
+                              </select>
+                            </fieldset>
+                          </div>
+                          <div
+                            class="col-xs-12 col-sm-6 col-md-4 form-builder-item">
+                            <div class="form-group line-item-property__fields">
+                              <div class="field-date input-groups">
+                                <input
+                                  class="tourmaster-datepicker form-control ngay hasDatepicker"
+                                  value=""
+                                  autocomplete="off"
+                                  id="datesss"
+                                  name="contact[Ngày tháng năm sinh]"
+                                  type="text"
+                                  placeholder="Ngày tháng năm sinh"
+                                  data-date-format="dd MM yyyy"
+                                  readonly="readonly"
+                                  required="" />
+
+                                <span class="input-group-addons"
+                                  ><i class="fa fa-angle-down"></i
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="col-xs-12 col-sm-6 col-md-4 form-builder-item">
+                            <fieldset class="form-group">
+                              <input
+                                class="form-control"
+                                type="text"
+                                autocomplete="off"
+                                name="contact[Họ tên phụ huynh]"
+                                id="name1"
+                                placeholder="Họ tên phụ huynh"
+                                required="" />
+                            </fieldset>
+                          </div>
+                          <div
+                            class="col-xs-12 col-sm-6 col-md-4 form-builder-item">
+                            <fieldset class="form-group">
+                              <input
+                                class="form-control"
+                                onkeypress="preventNonNumericalInput(event)"
+                                autocomplete="off"
+                                type="text"
+                                name="contact[Số điện thoại]"
+                                placeholder="Số điện thoại"
+                                required="" />
+                            </fieldset>
+                          </div>
+                          <div
+                            class="col-xs-12 col-sm-6 col-md-4 form-builder-item">
+                            <fieldset class="form-group">
+                              <input
+                                type="email"
+                                autocomplete="off"
+                                name="contact[email]"
+                                data-validation="email"
+                                placeholder="Email"
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
+                                class="email form-control form-control-lg"
+                                required="" />
+                            </fieldset>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12 form-builder-item">
+                            <fieldset class="form-group has-placeholder mes">
+                              <textarea
+                                autocomplete="off"
+                                class="form-control"
+                                name="contact[body]"
+                                rows="6"
+                                placeholder="Nhập địa chỉ"
+                                required=""></textarea>
+                            </fieldset>
+                          </div>
+                        </div>
+                        <div
+                          class="wrap-forms wrap-forms-buttons margin-top-40 f-left w_100">
+                          <div class="row">
+                            <div class="col-sm-12 wrap-buttons text-center">
+                              <button
+                                class="theme_button wide_button color1 btn btn-primary"
+                                type="submit">
+                                Gửi thông tin
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            $(".gioitinh select").change(function () {
+              $(".gioitinh input").attr(
+                "value",
+                $(this).find("option:selected").val()
+              );
+            });
+          </script>
+        </section>
+
         <!-- Programs -->
         <section class="section_programs">
           <!-- Programs content will go here -->
@@ -643,6 +812,8 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <!-- Owl Carousel JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- Custom JS -->

@@ -1239,3 +1239,171 @@ footer {
 .lazyloaded {
   opacity: 1;
 }
+
+/* Đăng ký tuyển sinh online */
+.awe-section-5 {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.section_make_appointment {
+  position: relative;
+}
+
+.section_make_appointment .heading {
+  margin-bottom: 40px;
+}
+
+.section_make_appointment h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fb66a8;
+  margin-bottom: 10px;
+}
+
+.section_make_appointment h2 span {
+  position: relative;
+  display: inline-block;
+}
+
+.section_make_appointment h2 span:after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 3px;
+  background-color: #fb66a8;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.padding-top-10 {
+  padding-top: 10px;
+  font-size: 25px;
+}
+
+.form-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-builder-item {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.form-control {
+  height: 50px;
+  padding: 10px 15px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #fb66a8;
+  box-shadow: 0 0 0 2px rgba(251, 102, 168, 0.1);
+  outline: none;
+}
+
+textarea.form-control {
+  height: auto;
+  resize: vertical;
+}
+
+.gioitinh {
+  position: relative;
+}
+
+.gioitinh select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.input-group-addons {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #999;
+  z-index: 1;
+}
+
+.field-date {
+  position: relative;
+}
+
+.field-date .input-group-addons {
+  pointer-events: none;
+}
+
+.margin-top-40 {
+  margin-top: 40px;
+}
+
+.f-left {
+  float: left;
+}
+
+.w_100 {
+  width: 100%;
+}
+
+.theme_button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #fb66a8;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme_button:hover {
+  background-color: #e45a9d;
+}
+
+.wide_button {
+  min-width: 200px;
+}
+
+/* Responsive styles for form */
+@media (max-width: 767px) {
+  .section_make_appointment h2 {
+    font-size: 28px;
+  }
+
+  .form-wrapper {
+    padding: 20px 15px;
+  }
+
+  .form-control {
+    height: 45px;
+  }
+
+  .theme_button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
