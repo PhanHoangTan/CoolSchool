@@ -636,8 +636,7 @@
                     <h2><span>ĐĂNG KÝ TUYỂN SINH ONLINE</span></h2>
                     <p class="padding-top-10">Thông tin học sinh</p>
                   </div>
-                  <div
-                    class="form-wrapper columns_margin_bottom_20 columns_padding_15">
+                  <div class="form-wrapper">
                     <form
                       accept-charset="UTF-8"
                       action="https://cool-school.mysapo.net/contact"
@@ -646,132 +645,94 @@
                       <input name="FormType" type="hidden" value="contact" />
                       <input name="utf8" type="hidden" value="true" />
 
-                      <p
-                        id="errorFills"
-                        style="margin-bottom: 10px; color: red"></p>
-                      <div
-                        id="emtry_contact"
-                        class="form-signup form_contact clearfix">
-                        <div class="row">
-                          <div
-                            class="col-xs-12 col-sm-6 col-md-4 form-builder-item">
-                            <fieldset class="form-group">
-                              <input
-                                class="form-control"
-                                type="text"
-                                autocomplete="off"
-                                name="contact[name]"
-                                id="name"
-                                placeholder="Họ tên học sinh"
-                                required="" />
-                            </fieldset>
+                      <div class="form-container">
+                        <div class="form-row">
+                          <div class="form-field">
+                            <input
+                              class="form-input"
+                              type="text"
+                              name="contact[name]"
+                              id="name"
+                              placeholder="Họ tên học sinh"
+                              required />
                           </div>
-                          <div
-                            class="col-xs-12 col-sm-6 col-md-4 form-builder-item gioitinh">
-                            <fieldset class="form-group">
-                              <input
-                                placeholder="Giới tính"
-                                type="text"
-                                autocomplete="off"
-                                class="form-control"
-                                value=""
-                                name="contact[Giới tính]" />
-                              <span class="input-group-addons"
-                                ><i class="fa fa-angle-down"></i
-                              ></span>
-                              <select name="gioitinh1">
-                                <option selected="selected">Giới tính</option>
+                          <div class="form-field">
+                            <div class="select-wrapper">
+                              <select
+                                name="contact[Giới tính]"
+                                class="form-select">
+                                <option value="" selected disabled>
+                                  Giới tính
+                                </option>
                                 <option value="Nam">Nam</option>
                                 <option value="Nữ">Nữ</option>
                               </select>
-                            </fieldset>
+                              <span class="select-arrow"
+                                ><i class="fa fa-angle-down"></i
+                              ></span>
+                            </div>
                           </div>
-                          <div
-                            class="col-xs-12 col-sm-6 col-md-4 form-builder-item">
-                            <div class="form-group line-item-property__fields">
-                              <div class="field-date input-groups">
-                                <input
-                                  class="tourmaster-datepicker form-control ngay hasDatepicker"
-                                  value=""
-                                  autocomplete="off"
-                                  id="datesss"
-                                  name="contact[Ngày tháng năm sinh]"
-                                  type="text"
-                                  placeholder="Ngày tháng năm sinh"
-                                  data-date-format="dd MM yyyy"
-                                  readonly="readonly"
-                                  required="" />
+                          <div class="form-field">
+                            <div class="date-wrapper">
+                              <input
+                                class="form-input datepicker"
+                                type="text"
+                                name="contact[Ngày tháng năm sinh]"
+                                placeholder="Ngày tháng năm sinh"
+                                readonly
+                                required />
+                              <span class="date-icon"
+                                ><i class="fa fa-angle-down"></i
+                              ></span>
+                            </div>
+                          </div>
+                        </div>
 
-                                <span class="input-group-addons"
-                                  ><i class="fa fa-angle-down"></i
-                                ></span>
-                              </div>
-                            </div>
+                        <div class="form-row">
+                          <div class="form-field">
+                            <input
+                              class="form-input"
+                              type="text"
+                              name="contact[Họ tên phụ huynh]"
+                              placeholder="Họ tên phụ huynh"
+                              required />
                           </div>
-                          <div
-                            class="col-xs-12 col-sm-6 col-md-4 form-builder-item">
-                            <fieldset class="form-group">
-                              <input
-                                class="form-control"
-                                type="text"
-                                autocomplete="off"
-                                name="contact[Họ tên phụ huynh]"
-                                id="name1"
-                                placeholder="Họ tên phụ huynh"
-                                required="" />
-                            </fieldset>
+                          <div class="form-field">
+                            <input
+                              class="form-input"
+                              type="text"
+                              name="contact[Số điện thoại]"
+                              placeholder="Số điện thoại"
+                              onkeypress="preventNonNumericalInput(event)"
+                              required />
                           </div>
-                          <div
-                            class="col-xs-12 col-sm-6 col-md-4 form-builder-item">
-                            <fieldset class="form-group">
-                              <input
-                                class="form-control"
-                                onkeypress="preventNonNumericalInput(event)"
-                                autocomplete="off"
-                                type="text"
-                                name="contact[Số điện thoại]"
-                                placeholder="Số điện thoại"
-                                required="" />
-                            </fieldset>
-                          </div>
-                          <div
-                            class="col-xs-12 col-sm-6 col-md-4 form-builder-item">
-                            <fieldset class="form-group">
-                              <input
-                                type="email"
-                                autocomplete="off"
-                                name="contact[email]"
-                                data-validation="email"
-                                placeholder="Email"
-                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
-                                class="email form-control form-control-lg"
-                                required="" />
-                            </fieldset>
+                          <div class="form-field">
+                            <input
+                              class="form-input"
+                              type="email"
+                              name="contact[email]"
+                              placeholder="Email"
+                              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
+                              required />
                           </div>
                         </div>
-                        <div class="row">
-                          <div class="col-xs-12 form-builder-item">
-                            <fieldset class="form-group has-placeholder mes">
-                              <textarea
-                                autocomplete="off"
-                                class="form-control"
-                                name="contact[body]"
-                                rows="6"
-                                placeholder="Nhập địa chỉ"
-                                required=""></textarea>
-                            </fieldset>
+
+                        <div class="form-row">
+                          <div class="form-field full-width">
+                            <textarea
+                              class="form-textarea"
+                              name="contact[body]"
+                              rows="6"
+                              placeholder="Nhập địa chỉ"
+                              required></textarea>
                           </div>
                         </div>
-                        <div
-                          class="wrap-forms wrap-forms-buttons margin-top-40 f-left w_100">
-                          <div class="row">
-                            <div class="col-sm-12 wrap-buttons text-center">
-                              <button
-                                class="theme_button wide_button color1 btn btn-primary"
-                                type="submit">
-                                Gửi thông tin
-                              </button>
-                            </div>
+
+                        <div class="form-row">
+                          <div class="form-field full-width">
+                            <button class="submit-button" type="submit">
+                              Gửi thông tin
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -781,14 +742,6 @@
               </div>
             </div>
           </div>
-          <script>
-            $(".gioitinh select").change(function () {
-              $(".gioitinh input").attr(
-                "value",
-                $(this).find("option:selected").val()
-              );
-            });
-          </script>
         </section>
 
         <!-- Programs -->

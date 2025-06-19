@@ -1243,7 +1243,7 @@ footer {
 /* Đăng ký tuyển sinh online */
 .awe-section-5 {
   padding: 60px 0;
-  background-color: #f9f9f9;
+  background-color: #fff;
   position: relative;
 }
 
@@ -1252,7 +1252,7 @@ footer {
 }
 
 .section_make_appointment .heading {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .section_make_appointment h2 {
@@ -1260,6 +1260,7 @@ footer {
   font-weight: 700;
   color: #fb66a8;
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .section_make_appointment h2 span {
@@ -1281,129 +1282,158 @@ footer {
 .padding-top-10 {
   padding-top: 10px;
   font-size: 25px;
+  color: #333;
+  margin-bottom: 30px;
 }
 
 .form-wrapper {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 30px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.form-builder-item {
+/* Form container */
+.form-container {
+  width: 100%;
+}
+
+/* Form rows */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: 20px;
+  justify-content: space-between;
 }
 
-.form-group {
-  position: relative;
-  margin-bottom: 0;
+/* Form fields */
+.form-field {
+  flex: 1;
+  margin: 0 10px;
+  min-width: 250px;
 }
 
-.form-control {
+.form-field.full-width {
+  width: 100%;
+  flex-basis: 100%;
+}
+
+/* Form inputs */
+.form-input {
+  width: 100%;
   height: 50px;
   padding: 10px 15px;
-  border: 1px solid #e5e5e5;
-  border-radius: 5px;
-  font-size: 14px;
-  width: 100%;
-  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  transition: border-color 0.3s;
 }
 
-.form-control:focus {
+.form-input:focus {
   border-color: #fb66a8;
-  box-shadow: 0 0 0 2px rgba(251, 102, 168, 0.1);
   outline: none;
 }
 
-textarea.form-control {
-  height: auto;
-  resize: vertical;
-}
-
-.gioitinh {
+/* Select styling */
+.select-wrapper {
   position: relative;
+  width: 100%;
 }
 
-.gioitinh select {
-  position: absolute;
-  top: 0;
-  left: 0;
+.form-select {
   width: 100%;
   height: 50px;
-  opacity: 0;
+  padding: 10px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  appearance: none;
   cursor: pointer;
-  z-index: 2;
 }
 
-.input-group-addons {
+.select-arrow {
   position: absolute;
   top: 50%;
   right: 15px;
   transform: translateY(-50%);
   color: #999;
-  z-index: 1;
-}
-
-.field-date {
-  position: relative;
-}
-
-.field-date .input-group-addons {
   pointer-events: none;
 }
 
-.margin-top-40 {
-  margin-top: 40px;
-}
-
-.f-left {
-  float: left;
-}
-
-.w_100 {
+/* Date picker styling */
+.date-wrapper {
+  position: relative;
   width: 100%;
 }
 
-.theme_button {
+.datepicker {
+  cursor: pointer;
+}
+
+.date-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
+}
+
+/* Textarea styling */
+.form-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  resize: vertical;
+}
+
+.form-textarea:focus {
+  border-color: #fb66a8;
+  outline: none;
+}
+
+/* Submit button */
+.submit-button {
   display: inline-block;
-  padding: 12px 30px;
-  background-color: #fb66a8;
+  padding: 12px 40px;
+  background-color: #6a5acd;
   color: #fff;
   border: none;
   border-radius: 30px;
   font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s;
+  margin-top: 20px;
 }
 
-.theme_button:hover {
-  background-color: #e45a9d;
+.submit-button:hover {
+  background-color: #5d4eb3;
 }
 
-.wide_button {
-  min-width: 200px;
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-field {
+    flex-basis: 100%;
+    margin: 0 0 15px;
+  }
 
-/* Responsive styles for form */
-@media (max-width: 767px) {
+  .form-row {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
   .section_make_appointment h2 {
     font-size: 28px;
   }
 
-  .form-wrapper {
-    padding: 20px 15px;
-  }
-
-  .form-control {
-    height: 45px;
-  }
-
-  .theme_button {
-    padding: 10px 20px;
-    font-size: 14px;
+  .padding-top-10 {
+    font-size: 20px;
   }
 }

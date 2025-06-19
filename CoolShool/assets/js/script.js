@@ -83,9 +83,9 @@ $(document).ready(function () {
       }
     });
 
-  // Initialize datepicker if available
+  // Initialize datepicker for new form
   if ($.fn.datepicker) {
-    $(".tourmaster-datepicker").datepicker({
+    $(".datepicker").datepicker({
       dateFormat: "dd MM yy",
       changeMonth: true,
       changeYear: true,
