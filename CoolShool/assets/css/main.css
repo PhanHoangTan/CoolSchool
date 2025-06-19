@@ -721,3 +721,155 @@ footer {
 .fadeIn {
   animation: fadeIn 1s ease forwards;
 }
+
+/* About Section Styles - Updated to match image */
+.awe-section-2 {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.section_about {
+  position: relative;
+}
+
+/* Section Title */
+.section-title {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section-title .title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.pink-text {
+  color: #ff72b4;
+}
+
+.title-line {
+  position: relative;
+  height: 10px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.title-line span {
+  display: inline-block;
+  width: 80px;
+  height: 3px;
+  background-color: #ff72b4;
+  position: relative;
+}
+
+.title-line span:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ff72b4;
+  border-radius: 50%;
+  top: -3.5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Introduction Content */
+.intro-content {
+  padding-right: 30px;
+}
+
+.intro-heading {
+  margin-bottom: 20px;
+}
+
+.intro-heading h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.intro-content p {
+  color: #666;
+  line-height: 1.8;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Statistics Boxes */
+.stat-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.stat-box {
+  width: calc(50% - 15px);
+  margin-bottom: 30px;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.blue-box {
+  background-color: #5dcff3;
+}
+
+.green-box {
+  background-color: #c0d72f;
+}
+
+.yellow-box {
+  background-color: #ffcc4e;
+}
+
+.pink-box {
+  background-color: #ff8fb9;
+}
+
+.stat-number {
+  font-size: 60px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  line-height: 1;
+}
+
+.stat-text {
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .intro-content {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-title .title {
+    font-size: 28px;
+  }
+
+  .intro-heading h2 {
+    text-align: center;
+  }
+
+  .stat-boxes {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-box {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
