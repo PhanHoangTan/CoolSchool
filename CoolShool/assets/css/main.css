@@ -1050,3 +1050,188 @@ footer {
     margin-bottom: 20px;
   }
 }
+
+/* Why Choose Cool School Section */
+.awe-section-4 {
+  padding: 60px 0;
+  background-color: #fff;
+  position: relative;
+}
+
+.section_infor_utilities {
+  position: relative;
+}
+
+.heading_infor {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.heading_infor h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ff72b4;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.heading_ h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.heading_ h2 span {
+  position: relative;
+}
+
+.heading_ h2 span:after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: #ff72b4;
+  bottom: -10px;
+  left: 0;
+}
+
+.infor_content {
+  margin-bottom: 30px;
+}
+
+.infor_content p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.infor_1 {
+  position: relative;
+  padding: 0 0 0 20px;
+  margin-bottom: 20px;
+}
+
+.infor_1 b {
+  position: absolute;
+  width: 2px;
+  background-color: #ff72b4;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.content_row {
+  position: relative;
+  padding: 10px 0 10px 20px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.content_row:before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: #ff72b4;
+}
+
+.wrapper-btn {
+  margin-top: 20px;
+}
+
+.content_bot_uti {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.uti_body {
+  display: flex;
+  margin-bottom: 30px;
+  padding: 0 15px;
+}
+
+.uti_body .icon {
+  flex: 0 0 70px;
+  max-width: 70px;
+  margin-right: 15px;
+}
+
+.uti_body .content {
+  flex: 1;
+}
+
+.uti_body .title {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.uti_body .sum {
+  display: block;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Enable lazy loading images */
+.lazyload {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.lazyloaded {
+  opacity: 1;
+}
+
+/* Responsive for Why Choose Cool School section */
+@media (max-width: 991px) {
+  .heading_infor h2 {
+    font-size: 28px;
+  }
+
+  .uti_body {
+    margin-bottom: 20px;
+  }
+
+  .uti_body .icon {
+    flex: 0 0 50px;
+    max-width: 50px;
+    margin-right: 10px;
+  }
+
+  .uti_body .title {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .heading_infor h2 {
+    font-size: 24px;
+  }
+
+  .heading_ h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .heading_ h2 span:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .uti_body {
+    margin-bottom: 20px;
+  }
+
+  .infor_content {
+    padding: 0 15px;
+  }
+}
