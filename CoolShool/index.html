@@ -15,6 +15,13 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- Owl Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
     <!-- Custom CSS -->
     <link
       href="assets/css/main.css"
@@ -168,10 +175,95 @@
         </div>
       </header>
 
+      <!-- Divider -->
+      <div class="header-divider"></div>
+
       <main>
         <!-- Slider -->
-        <section class="section_slider">
-          <!-- Slider content will go here -->
+        <section class="awe-section-1">
+          <div
+            class="home-slider owl-carousel owl-theme not-aweowl section_slider owl-loaded owl-drag">
+            <div class="owl-stage-outer">
+              <div
+                class="owl-stage"
+                style="
+                  transform: translate3d(0px, 0px, 0px);
+                  transition: all;
+                  width: 2950px;
+                ">
+                <div class="owl-item active" style="width: 1475px">
+                  <div class="items">
+                    <a href="#" class="clearfix">
+                      <picture>
+                        <source
+                          media="(max-width: 767px)"
+                          srcset="
+                            //bizweb.dktcdn.net/thumb/large/100/347/562/themes/939147/assets/slider_1.jpg?1706091862718
+                          " />
+                        <img
+                          src="//bizweb.dktcdn.net/100/347/562/themes/939147/assets/slider_1.jpg?1706091862718"
+                          alt="Slider 1" />
+                      </picture>
+                    </a>
+                  </div>
+                </div>
+                <div class="owl-item" style="width: 1475px">
+                  <div class="items">
+                    <a href="#" class="clearfix">
+                      <picture>
+                        <source
+                          media="(max-width: 767px)"
+                          srcset="
+                            //bizweb.dktcdn.net/thumb/large/100/347/562/themes/939147/assets/slider_2.jpg?1706091862718
+                          " />
+                        <img
+                          src="//bizweb.dktcdn.net/100/347/562/themes/939147/assets/slider_2.jpg?1706091862718"
+                          alt="Slider 2" />
+                      </picture>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="owl-nav disabled">
+              <div class="owl-prev">prev</div>
+              <div class="owl-next">next</div>
+            </div>
+            <div class="owl-dots">
+              <div class="owl-dot active"><span></span></div>
+              <div class="owl-dot"><span></span></div>
+            </div>
+          </div>
+          <div class="section_register">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                  <div class="pull-left icon">
+                    <img
+                      class="lazyload loaded"
+                      src="//bizweb.dktcdn.net/100/347/562/themes/939147/assets/icon_register.png?1706091862718"
+                      data-src="//bizweb.dktcdn.net/100/347/562/themes/939147/assets/icon_register.png?1706091862718"
+                      alt="Cool School"
+                      data-was-processed="true" />
+                  </div>
+                  <div class="pull-left info_title">
+                    <p class="title">Đăng ký Tuyển sinh năm học 2019-2020</p>
+                    <p class="sub_title">
+                      Cool School - Môi trường giáo dục hoàn hảo cho trẻ từ 15
+                      tháng tới 6 tuổi
+                    </p>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                  <div class="wrapper-btn pull-right">
+                    <a href="#" class="btn btn-primary btn_scroll_register"
+                      >Đăng ký ngay <i class="fas fa-chevron-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <!-- About Us -->
@@ -207,6 +299,8 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
   </body>
