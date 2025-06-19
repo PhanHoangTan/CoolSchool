@@ -92,7 +92,66 @@ $(document).ready(function () {
       yearRange: "-100:+0",
     });
   }
+
+  // Initialize Swiper for testimonials
+  initTestimonialSwiper();
+
+  // Handle testimonial avatar clicks
+  $(".avatar-item").click(function () {
+    // Remove active class from all avatars
+    $(".avatar-item").removeClass("active");
+    // Add active class to clicked avatar
+    $(this).addClass("active");
+
+    // Get the testimonial data (in a real application, you would load different testimonials)
+    var name = $(this).data("name") || "Nguyễn Tuấn Minh";
+    var title = $(this).data("title") || "Phụ huynh cháu Tuấn";
+
+    // Update the testimonial content
+    $(".author-name").text(name);
+    $(".author-title").text(title);
+  });
 });
+
+// Function to initialize Swiper for testimonials
+function initTestimonialSwiper() {
+  // Check if Swiper is loaded and elements exist
+  if (
+    typeof Swiper !== "undefined" &&
+    $(".testimonial-thumbs").length > 0 &&
+    $(".testimonial-content-gallery").length > 0
+  ) {
+    // Initialize thumbnail swiper
+    var galleryThumbs = new Swiper(".testimonial-thumbs", {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      loop: true,
+      freeMode: true,
+      loopedSlides: 4,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      centerInsufficientSlides: true,
+    });
+
+    // Initialize main content swiper
+    var galleryTop = new Swiper(".testimonial-content-gallery", {
+      spaceBetween: 10,
+      loop: true,
+      loopedSlides: 4,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: galleryThumbs,
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+    });
+  }
+}
 
 // Function to prevent non-numerical input in phone field
 function preventNonNumericalInput(e) {
