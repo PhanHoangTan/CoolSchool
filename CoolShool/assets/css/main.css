@@ -675,20 +675,11 @@ main {
 
 /* Footer styles */
 footer {
-  background-color: #333;
+  background-color: #fff;
   color: #fff;
   padding: 50px 0 0;
 }
 
-.footer-top {
-  padding-bottom: 30px;
-}
-
-.footer-bottom {
-  background-color: #222;
-  padding: 15px 0;
-  text-align: center;
-}
 
 /* Button styles */
 .btn-primary {
