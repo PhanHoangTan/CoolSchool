@@ -6,20 +6,22 @@
   margin: 5px !important;
   padding-left: 40px !important;
   padding-right: 40px !important;
+  width: 100%;
 }
 
-/* Page container for consistent margins */
+/* Page container for full-width background */
 .page-container {
-  max-width: 100%;
   width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
 }
 
-/* Container width adjustment for the entire page */
+/* Container for content with 80% width */
 .container {
-  max-width: 1140px;
   width: 80%;
+  max-width: 1140px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -29,6 +31,7 @@
 body {
   overflow-x: hidden;
   background-color: #f9f9f9;
+  margin: 0;
 }
 
 .topbar {
@@ -79,6 +82,7 @@ body {
 .a-right {
   text-align: right;
 }
+
 .social-circle {
   display: flex;
   align-items: center;
@@ -92,8 +96,9 @@ body {
   transition: color 0.3s;
   background: transparent;
 }
+
 .social-circle:hover {
-  color: #fff !important; /* Icon chuyển thành màu trắng khi hover */
+  color: #fff !important;
 }
 
 .wrap_top_bar .hai01 {
@@ -113,6 +118,7 @@ body {
     gap: 10px !important;
   }
 }
+
 @media (max-width: 767.98px) {
   .wrap_top_bar .row.align-items-center {
     flex-direction: column !important;
@@ -139,6 +145,7 @@ body {
   padding: 15px 0;
   background-color: #fff;
   border-bottom: 1px solid #f0f0f0;
+  width: 100%;
 }
 
 .content_header {
@@ -178,6 +185,7 @@ body {
 
 .bg-header-nav {
   background-color: #fff;
+  width: 100%;
 }
 
 .row-noGutter-2 {
@@ -188,6 +196,8 @@ body {
 /* Menu Navigation */
 .header-nav {
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .header-nav .item_big {
@@ -195,11 +205,14 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  width: 100%;
+  align-items: center; /* Vertically align items */
 }
 
 .header-nav .nav-item {
   position: relative;
-  padding: 0 15px;
+  padding: 0 8px; /* Reduced padding to fit all items */
 }
 
 .header-nav .nav-item.active .a-img {
@@ -209,12 +222,13 @@ body {
 .header-nav .a-img {
   display: block;
   padding: 15px 0;
-  font-size: 15px;
+  font-size: 14px; /* Slightly reduced font size to fit all items */
   font-weight: 500;
   color: #333;
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.3s ease;
+  line-height: 30px; /* Match search button height */
 }
 
 .header-nav .a-img:hover {
@@ -264,11 +278,14 @@ body {
 
 /* Search Box */
 .lh-60 {
-  line-height: 60px;
+  line-height: 30px; /* Reduced to match nav items */
 }
 
 .header_search {
   position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 8px; /* Small margin to separate from nav items */
 }
 
 .search-bar {
@@ -278,6 +295,7 @@ body {
   overflow: hidden;
   transition: all 0.3s ease;
   align-items: center;
+  height: 30px; /* Match nav item height */
 }
 
 .input-group-field {
@@ -288,7 +306,7 @@ body {
   transition: all 0.3s ease;
   visibility: hidden;
   font-size: 13px;
-  line-height: 1;
+  line-height: 30px; /* Match height */
   height: 30px;
 }
 
@@ -305,7 +323,7 @@ body {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  line-height: 1;
+  line-height: 30px;
 }
 
 .btn.icon-fallback-text .fas {
@@ -338,6 +356,22 @@ body {
 
   .nav-mobile-button {
     display: block !important;
+  }
+
+  .header-nav .item_big {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: flex-start;
+  }
+
+  .header-nav .nav-item {
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px;
+  }
+
+  .header_search {
+    margin-left: 15px;
+    margin-top: 10px;
   }
 }
 
