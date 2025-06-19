@@ -453,14 +453,15 @@ li {
 
 .section_register .container {
   width: 100%;
-  max-width: 100%;
-  padding-left: 0;
-  padding-right: 0;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .section_register .row {
-  margin: 0;
-  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .section_register .icon img {
@@ -471,23 +472,34 @@ li {
 
 .section_register .pull-left {
   float: left;
+  display: flex;
+  align-items: center;
 }
 
 .section_register .pull-right {
   float: right;
 }
 
+.section_register .info_title {
+  display: block;
+  width: 100%;
+}
+
 .section_register .title {
   color: #fff;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  display: block;
+  line-height: 1.2;
 }
 
 .section_register .sub_title {
   color: #fff;
   font-size: 14px;
   margin-bottom: 0;
+  display: block;
+  line-height: 1.4;
 }
 
 .section_register .btn-primary {
@@ -495,6 +507,8 @@ li {
   color: #ff72b4;
   border: 2px solid #fff;
   font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 25px;
 }
 
 .section_register .btn-primary:hover {
