@@ -58,6 +58,7 @@ li {
   background-color: #ff72b4;
   padding: 10px 0;
   color: #fff;
+  position: relative;
 }
 
 .topbar_left {
@@ -128,14 +129,6 @@ li {
   color: #fff;
 }
 
-.topbar_right a {
-  /* margin-top: 2px; - removed */
-}
-
-.topbar_right i {
-  margin: 0;
-}
-
 /* Header styles */
 .mid-header {
   padding: 15px 0;
@@ -194,19 +187,7 @@ li {
   position: relative;
 }
 
-.nav-item.active .a-img {
-  color: #ff72b4;
-}
-
-.nav-item.active .a-img span:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: #ff72b4;
-  bottom: -5px;
-  left: 0;
-}
+/* Remove default active styles as we're using page-specific classes now */
 
 .a-img .fa-caret-down {
   margin-left: 5px;
@@ -354,7 +335,7 @@ li {
   height: auto;
   display: block;
   margin-bottom: 0; /* Remove any bottom margin */
-  vertical-align: bottom; /* Fix for image spacing */
+  /* vertical-align is ignored with display: block, removed */
 }
 
 .owl-carousel {
@@ -2435,4 +2416,58 @@ footer {
 .ui-datepicker-year {
   padding-right: 5px !important;
   background-image: none !important;
+}
+
+/* Current page indicators */
+.home-page .nav-item:nth-child(1) .a-img,
+.about-page .nav-item:nth-child(2) .a-img {
+  color: #ff72b4;
+}
+
+.home-page .nav-item:nth-child(1) .a-img::after,
+.about-page .nav-item:nth-child(2) .a-img::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff72b4;
+}
+
+/* Topbar indicator - shows the current page name */
+.topbar::before {
+  content: "Trang hiện tại: ";
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.home-page .topbar::after {
+  content: "Trang chủ";
+  display: inline-block;
+  position: absolute;
+  left: calc(50% + 90px);
+  transform: translateX(-50%);
+  color: #ffe600;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.about-page .topbar::after {
+  content: "Giới thiệu";
+  display: inline-block;
+  position: absolute;
+  left: calc(50% + 90px);
+  transform: translateX(-50%);
+  color: #ffe600;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
 }
