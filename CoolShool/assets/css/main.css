@@ -90,10 +90,11 @@ li {
 .hai01 {
   color: #fff;
   font-size: 14px;
+  margin-top: 2px;
 }
 
 .hai01:hover {
-  color: #ffe600;
+  color: #0047ab;
 }
 
 .a-right {
@@ -125,7 +126,14 @@ li {
 
 .social-circle:hover {
   color: #fff;
-  border-color: #ffe600;
+}
+
+.topbar_right a {
+  /* margin-top: 2px; - removed */
+}
+
+.topbar_right i {
+  margin: 0;
 }
 
 /* Header styles */
