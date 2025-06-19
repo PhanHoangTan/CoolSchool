@@ -673,11 +673,106 @@ main {
   margin-top: 0;
 }
 
-/* Footer styles */
+/* Footer Styles */
 footer {
   background-color: #fff;
-  color: #fff;
-  padding: 50px 0 0;
+  color: #222;
+  margin-top: 50px;
+}
+
+.footer-main {
+  padding: 50px 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-column {
+  width: 23%;
+  margin-bottom: 30px;
+}
+
+.footer-info {
+  width: 31%;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  max-width: 150px;
+}
+
+.school-details {
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.school-name {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-title {
+  color: #222;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #222;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ff6b6b;
+}
+
+.footer-copyright {
+  background-color: #1a1a1a;
+  padding: 15px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.copyright-text a {
+  color: #ff6b6b;
+  text-decoration: none;
+}
+
+@media (max-width: 991px) {
+  .footer-column {
+    width: 48%;
+  }
+
+  .footer-info {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-column {
+    width: 100%;
+  }
 }
 
 /* Button styles */
