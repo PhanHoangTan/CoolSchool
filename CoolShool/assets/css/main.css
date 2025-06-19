@@ -680,12 +680,11 @@ footer {
   padding: 50px 0 0;
 }
 
-
 /* Button styles */
 .btn-primary {
   display: inline-block;
   padding: 10px 25px;
-  background-color: #ff72b4;
+  background-color: #fb66a8;
   color: #fff;
   border-radius: 30px;
   border: none;
@@ -1061,24 +1060,26 @@ footer {
 .heading_infor h2 {
   font-size: 36px;
   font-weight: 700;
-  color: #ff72b4;
+  color: #fb66a8;
   line-height: 1.4;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .heading_ h2 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
-  color: #333;
+  color: #fb66a8;
   margin-bottom: 20px;
   position: relative;
+  text-transform: uppercase;
 }
 
 .heading_ h2 span {
   position: relative;
 }
 
-.heading_ h2 span:after {
+/* .heading_ h2 span:after {
   content: "";
   position: absolute;
   width: 60px;
@@ -1086,7 +1087,7 @@ footer {
   background-color: #ff72b4;
   bottom: -10px;
   left: 0;
-}
+} */
 
 .infor_content {
   margin-bottom: 30px;
@@ -1097,6 +1098,8 @@ footer {
   line-height: 1.8;
   margin-bottom: 20px;
   text-align: justify;
+  font-size: 15px;
+  /* text-transform: uppercase; */
 }
 
 .infor_1 {
@@ -1108,7 +1111,7 @@ footer {
 .infor_1 b {
   position: absolute;
   width: 2px;
-  background-color: #ff72b4;
+  background-color: #fb66a8;
   top: 0;
   bottom: 0;
   left: 0;
@@ -1119,6 +1122,8 @@ footer {
   padding: 10px 0 10px 20px;
   line-height: 1.5;
   color: #666;
+  font-size: 15px;
+  /* text-transform: uppercase; */
 }
 
 .content_row:before {
@@ -1128,7 +1133,7 @@ footer {
   position: absolute;
   left: 0;
   top: 10px;
-  color: #ff72b4;
+  color: #fb66a8;
 }
 
 .wrapper-btn {
@@ -1159,16 +1164,19 @@ footer {
 
 .uti_body .title {
   display: block;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  color: #333;
+  color: #fb66a8;
   margin-bottom: 10px;
+  /* text-transform: uppercase; */
 }
 
 .uti_body .sum {
   display: block;
   color: #666;
   line-height: 1.6;
+  font-size: 15px;
+  /* text-transform: uppercase; */
 }
 
 /* Enable lazy loading images */
