@@ -122,6 +122,32 @@ $(document).ready(function () {
       $(this).fadeIn(300);
     });
   });
+
+  // Chat Button Functionality
+  $(".chat-icon").on("click", function () {
+    // You can add code here to open a chat modal or redirect to a chat page
+    window.open("https://m.me/your-facebook-page", "_blank");
+  });
+
+  // Scroll to Top Button - Show/Hide based on scroll position
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 300) {
+      $(".scroll-top-button").addClass("visible");
+    } else {
+      $(".scroll-top-button").removeClass("visible");
+    }
+  });
+
+  // Scroll to Top Button - Functionality
+  $(".scroll-top-button").on("click", function () {
+    $("html, body").animate(
+      {
+        scrollTop: 0,
+      },
+      800
+    );
+    return false;
+  });
 });
 
 // Function to initialize Swiper for testimonials
