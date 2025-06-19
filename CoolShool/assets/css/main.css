@@ -927,17 +927,6 @@ footer {
   text-decoration: none;
 }
 
-/* .heading .title-head:after {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 3px;
-  background-color: #ff72b4;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-} */
-
 .margin-top-30 {
   margin-top: 30px;
 }
@@ -946,8 +935,18 @@ footer {
   text-align: center;
 }
 
+/* Carousel layout */
+.wrap_owl_blog {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
 .educate_index {
-  margin-bottom: 30px;
+  width: calc(33.333% - 30px);
+  margin: 0 15px 30px;
+  display: flex;
 }
 
 .myblogs {
@@ -956,8 +955,10 @@ footer {
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-  cursor: pointer;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .myblogs:hover {
@@ -968,13 +969,18 @@ footer {
 .image-blog-left {
   position: relative;
   overflow: hidden;
+  height: 0;
+  padding-bottom: 75%; /* 4:3 aspect ratio */
 }
 
 .image-blog-left img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
   transition: all 0.5s ease;
-  display: block;
 }
 
 .myblogs:hover .image-blog-left img {
@@ -983,6 +989,9 @@ footer {
 
 .content_blog {
   padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .content_right h3 {
@@ -990,16 +999,22 @@ footer {
   margin-bottom: 15px;
   font-size: 18px;
   font-weight: 700;
+  text-align: center;
 }
 
 .content_right h3 a {
   color: #333;
   text-decoration: none;
   transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
 .content_right h3 a:hover {
   color: #ff72b4;
+}
+
+.summary_item_blog {
+  flex-grow: 1;
 }
 
 .summary_item_blog p {
@@ -1007,50 +1022,15 @@ footer {
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
-/* Owl Carousel custom styles */
-.owl-carousel .owl-item {
-  padding: 15px 0;
-}
-
-.owl-carousel .owl-nav button.owl-prev,
-.owl-carousel .owl-nav button.owl-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  color: #333;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.owl-carousel .owl-nav button.owl-prev {
-  left: -20px;
-}
-
-.owl-carousel .owl-nav button.owl-next {
-  right: -20px;
-}
-
-.owl-carousel .owl-nav button:hover {
-  background-color: #ff72b4;
-  color: #fff;
+  text-align: justify;
 }
 
 /* Responsive styles for education section */
 @media (max-width: 991px) {
+  .educate_index {
+    width: calc(50% - 30px);
+  }
+
   .content_blog {
     padding: 15px;
   }
@@ -1066,6 +1046,7 @@ footer {
   }
 
   .educate_index {
-    margin-bottom: 15px;
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
