@@ -526,6 +526,59 @@ li {
   height: 100%;
 }
 
+/* Registration horizontal layout */
+.registration-info-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.registration-info-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.registration-info-item:first-child {
+  margin-right: 15px;
+}
+
+.registration-info-item img {
+  width: 60px;
+  height: auto;
+}
+
+.registration-info-item .title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: block;
+  line-height: 1.2;
+}
+
+.registration-info-item .sub_title {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 0;
+  display: block;
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  .registration-info-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .registration-info-item:first-child {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
 /* Responsive styles for registration section */
 @media (max-width: 991px) {
   .section_register {
@@ -2004,11 +2057,6 @@ footer {
   color: #999;
   font-size: 16px;
   pointer-events: none;
-}
-
-.form-input.datepicker:hover + .date-icon,
-.form-input.datepicker:focus + .date-icon {
-  color: #ff72b4;
 }
 
 /* Highlighted selected date */
