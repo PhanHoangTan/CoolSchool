@@ -814,6 +814,12 @@ footer {
   gap: 20px;
 }
 
+/* Stat boxes row */
+.stats-row {
+  display: flex;
+  gap: 20px;
+}
+
 .stat-box {
   width: 100%;
   padding: 30px 20px;
@@ -875,6 +881,10 @@ footer {
 
   .stats-column {
     margin-top: 10px;
+  }
+
+  .stats-row {
+    flex-direction: column;
   }
 
   .stat-box {
