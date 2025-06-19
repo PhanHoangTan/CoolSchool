@@ -2419,13 +2419,23 @@ footer {
 /* Current page indicators */
 .home-page .nav-item:nth-child(1) .a-img,
 .about-page .nav-item:nth-child(2) .a-img,
-.contact-page .nav-item:nth-child(6) .a-img {
+.contact-page .nav-item:nth-child(6) .a-img,
+.news-page .nav-item:nth-child(5) .a-img,
+.recruit-page .nav-item:nth-child(4) .a-img,
+.standard-program-page .nav-item:nth-child(3) .a-img,
+.usa-program-page .nav-item:nth-child(3) .a-img,
+.japan-program-page .nav-item:nth-child(3) .a-img {
   color: #ff72b4;
 }
 
 .home-page .nav-item:nth-child(1) .a-img::after,
 .about-page .nav-item:nth-child(2) .a-img::after,
-.contact-page .nav-item:nth-child(6) .a-img::after {
+.contact-page .nav-item:nth-child(6) .a-img::after,
+.news-page .nav-item:nth-child(5) .a-img::after,
+.recruit-page .nav-item:nth-child(4) .a-img::after,
+.standard-program-page .nav-item:nth-child(3) .a-img::after,
+.usa-program-page .nav-item:nth-child(3) .a-img::after,
+.japan-program-page .nav-item:nth-child(3) .a-img::after {
   content: "";
   position: absolute;
   bottom: -2px;
