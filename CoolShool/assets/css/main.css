@@ -187,8 +187,6 @@ li {
   position: relative;
 }
 
-/* Remove default active styles as we're using page-specific classes now */
-
 .a-img .fa-caret-down {
   margin-left: 5px;
   font-size: 12px;
@@ -2420,12 +2418,29 @@ footer {
 
 /* Current page indicators */
 .home-page .nav-item:nth-child(1) .a-img,
-.about-page .nav-item:nth-child(2) .a-img {
+.about-page .nav-item:nth-child(2) .a-img,
+.contact-page .nav-item:nth-child(6) .a-img {
   color: #ff72b4;
 }
 
 .home-page .nav-item:nth-child(1) .a-img::after,
-.about-page .nav-item:nth-child(2) .a-img::after {
+.about-page .nav-item:nth-child(2) .a-img::after,
+.contact-page .nav-item:nth-child(6) .a-img::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff72b4;
+}
+
+/* Hiệu ứng active trực tiếp cho menu item */
+.nav-item.active .a-img {
+  color: #ff72b4;
+}
+
+.nav-item.active .a-img::after {
   content: "";
   position: absolute;
   bottom: -2px;
@@ -2470,7 +2485,7 @@ footer {
 /* About page styles */
 .page_about {
   padding: 50px 0;
-  background-image: url('https://bizweb.dktcdn.net/100/347/562/themes/939147/assets/bg_gioithieu.jpg?1706001037574');
+  background-image: url("https://bizweb.dktcdn.net/100/347/562/themes/939147/assets/bg_gioithieu.jpg?1706001037574");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -2478,7 +2493,7 @@ footer {
 }
 
 .page_about::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -2529,7 +2544,6 @@ footer {
   margin-bottom: 20px;
   text-align: justify;
 }
- 
 
 .section-content p {
   margin-bottom: 15px;
