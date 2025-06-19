@@ -103,13 +103,24 @@ $(document).ready(function () {
     // Add active class to clicked avatar
     $(this).addClass("active");
 
-    // Get the testimonial data (in a real application, you would load different testimonials)
+    // Get the testimonial data
     var name = $(this).data("name") || "Nguyễn Tuấn Minh";
     var title = $(this).data("title") || "Phụ huynh cháu Tuấn";
+    var text =
+      $(this).data("text") ||
+      "Qua những trải nghiệm tuyệt vời của con tại Cool School, tôi cảm thấy nhà trường đã thực sự làm tốt sứ mệnh của mình khi mang tới cho các con một môi trường học tập hiện đại, thân thiện và cởi mở. Các con không chỉ được khuyến khích sáng tạo, thể hiện cá tính riêng mà còn được tạo điều kiện để phát triển tiềm năng của mình.";
 
-    // Update the testimonial content
-    $(".author-name").text(name);
-    $(".author-title").text(title);
+    // Update the testimonial content with animation
+    $(".testimonial-text").fadeOut(300, function () {
+      $(this).text(text).fadeIn(300);
+    });
+
+    // Update the author info with animation
+    $(".testimonial-author").fadeOut(300, function () {
+      $(".author-name").text(name);
+      $(".author-title").text(title);
+      $(this).fadeIn(300);
+    });
   });
 });
 
