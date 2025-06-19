@@ -753,8 +753,12 @@ footer {
   text-align: center;
 }
 
+.copyright-text {
+  color: #fff;
+}
+
 .copyright-text a {
-  color: #ff6b6b;
+  color: #fb66a8;
   text-decoration: none;
 }
 
