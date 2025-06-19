@@ -722,7 +722,7 @@ footer {
   animation: fadeIn 1s ease forwards;
 }
 
-/* About Section Styles - Updated to match image */
+/* About Section Styles - Complete rewrite to match image 2 */
 .awe-section-2 {
   padding: 60px 0;
   background-color: #fff;
@@ -732,7 +732,7 @@ footer {
   position: relative;
 }
 
-/* Section Title */
+/* Title */
 .section-title {
   margin-bottom: 40px;
   text-align: center;
@@ -776,39 +776,46 @@ footer {
   transform: translateX(-50%);
 }
 
-/* Introduction Content */
-.intro-content {
-  padding-right: 30px;
+/* Two column layout */
+.about-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Left column - Intro content */
+.intro-column {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
 }
 
 .intro-heading {
-  margin-bottom: 20px;
-}
-
-.intro-heading h2 {
   font-size: 24px;
   font-weight: 700;
-  margin: 0;
+  margin: 0 0 20px 0;
   text-transform: uppercase;
 }
 
-.intro-content p {
+.intro-text {
   color: #666;
   line-height: 1.8;
   font-size: 14px;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
-/* Statistics Boxes */
-.stat-boxes {
+/* Right column - Stat boxes */
+.stats-column {
+  flex: 1;
+  min-width: 300px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .stat-box {
-  width: calc(50% - 15px);
-  margin-bottom: 30px;
+  width: 100%;
   padding: 30px 20px;
   text-align: center;
   border-radius: 5px;
@@ -834,7 +841,7 @@ footer {
 .stat-number {
   font-size: 60px;
   font-weight: 700;
-  margin: 0 0 10px;
+  margin: 0 0 5px;
   line-height: 1;
 }
 
@@ -844,11 +851,15 @@ footer {
   line-height: 1.4;
 }
 
-/* Responsive Styles */
+/* Responsive adjustments */
 @media (max-width: 991px) {
-  .intro-content {
-    padding-right: 0;
-    margin-bottom: 30px;
+  .about-layout {
+    flex-direction: column;
+  }
+
+  .intro-column,
+  .stats-column {
+    max-width: 100%;
   }
 }
 
@@ -857,19 +868,26 @@ footer {
     font-size: 28px;
   }
 
-  .intro-heading h2 {
+  .intro-heading {
     text-align: center;
+    font-size: 22px;
   }
 
-  .stat-boxes {
-    max-width: 480px;
-    margin: 0 auto;
+  .stats-column {
+    margin-top: 10px;
+  }
+
+  .stat-box {
+    padding: 20px 15px;
+  }
+
+  .stat-number {
+    font-size: 48px;
   }
 }
 
 @media (max-width: 480px) {
   .stat-box {
-    width: 100%;
     margin-bottom: 15px;
   }
 }
