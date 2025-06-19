@@ -329,22 +329,42 @@ li {
   width: 100%;
 }
 
-/* Slider Section - adjust to sit against divider */
+/* Slider Section */
 .awe-section-1 {
   position: relative;
   padding-top: 0; /* Remove top padding to sit against divider */
   margin-top: 0;
+  padding-bottom: 0; /* Remove bottom padding */
 }
 
-/* Keep the rest of the Slider Section styles */
+.home-slider {
+  position: relative;
+  margin-bottom: 0; /* Remove any bottom margin */
+  line-height: 0; /* Remove any line-height spacing */
+  display: block;
+}
+
 .home-slider .items {
   position: relative;
+  line-height: 0; /* Remove line height spacing */
 }
 
 .home-slider img {
   width: 100%;
   height: auto;
   display: block;
+  margin-bottom: 0; /* Remove any bottom margin */
+  vertical-align: bottom; /* Fix for image spacing */
+}
+
+.owl-carousel {
+  display: block;
+  margin-bottom: 0; /* Remove any bottom margin */
+  font-size: 0; /* Remove font-size spacing */
+}
+
+.owl-carousel .owl-stage-outer {
+  line-height: 0; /* Remove line height spacing */
 }
 
 .owl-carousel .owl-nav button.owl-prev,
@@ -405,6 +425,16 @@ li {
   border-radius: 10px;
 }
 
+/* Fix for any possible gap between slider and registration */
+.home-slider.owl-carousel.owl-loaded {
+  font-size: 0;
+  line-height: 0;
+}
+
+.home-slider + .section_register {
+  margin-top: -10px; /* Negative margin to fix any 1px gap issues in some browsers */
+}
+
 /* Registration Section */
 .section_register {
   background-color: #ff72b4;
@@ -417,6 +447,8 @@ li {
   margin-left: 0;
   margin-right: 0;
   border-radius: 0;
+  line-height: normal; /* Reset line height */
+  font-size: 14px; /* Reset font size */
 }
 
 .section_register .container {
@@ -688,15 +720,4 @@ footer {
 
 .fadeIn {
   animation: fadeIn 1s ease forwards;
-}
-
-/* Slider Section */
-.awe-section-1 {
-  position: relative;
-  padding-top: 0; /* Remove top padding to sit against divider */
-  margin-top: 0;
-}
-
-.home-slider .items {
-  position: relative;
 }
