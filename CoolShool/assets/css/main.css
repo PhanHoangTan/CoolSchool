@@ -2353,3 +2353,19 @@ footer {
   border-color: #ff72b4;
   box-shadow: 0 0 0 3px rgba(255, 114, 180, 0.2);
 }
+
+/* Ẩn hoàn toàn các mũi tên dropdown */
+.select-arrow,
+.ui-datepicker-title .select-arrow,
+.ui-datepicker-month ~ .select-arrow,
+.ui-datepicker-year ~ .select-arrow,
+.ui-datepicker-title .fa-angle-down {
+  display: none !important;
+}
+
+/* Loại bỏ padding dư thừa */
+.ui-datepicker-month,
+.ui-datepicker-year {
+  padding-right: 5px !important;
+  background-image: none !important;
+}

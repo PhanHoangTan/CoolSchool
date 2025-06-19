@@ -353,13 +353,6 @@ function customizeSelectElements() {
     if (!wrapper.hasClass("select-styled")) {
       wrapper.addClass("select-styled");
 
-      // Thêm mũi tên dropdown
-      if ($(this).next(".select-arrow").length === 0) {
-        $('<i class="fas fa-angle-down select-arrow"></i>').insertAfter(
-          $(this)
-        );
-      }
-
       // Thêm hiệu ứng khi hover
       $(this).hover(
         function () {
@@ -382,6 +375,9 @@ function customizeSelectElements() {
     "border-radius": "20px",
     "padding-right": "15px !important",
   });
+
+  // Xóa các mũi tên dropdown đã được thêm trước đó
+  $(".ui-datepicker-title .select-arrow").remove();
 }
 
 // Function to position the datepicker correctly on mobile
