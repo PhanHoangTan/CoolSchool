@@ -36,16 +36,14 @@ $(document).ready(function () {
       img.classList.remove("lazyload");
       img.classList.add("lazyloaded");
     }
-  });
-
-  // Smooth scroll to registration form when button is clicked
+  }); // Smooth scroll to registration form when button is clicked
   $(".btn_scroll_register").on("click", function (e) {
     e.preventDefault();
     var targetSection = $("#registration-form");
     if (targetSection.length) {
       $("html, body").animate(
         {
-          scrollTop: targetSection.offset().top - 100,
+          scrollTop: targetSection.offset().top - 80,
         },
         1000
       );
