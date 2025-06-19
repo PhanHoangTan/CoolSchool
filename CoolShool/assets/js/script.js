@@ -86,10 +86,140 @@ $(document).ready(function () {
   // Initialize datepicker for new form
   if ($.fn.datepicker) {
     $(".datepicker").datepicker({
-      dateFormat: "dd MM yy",
+      dateFormat: "dd/mm/yy",
       changeMonth: true,
       changeYear: true,
       yearRange: "-100:+0",
+      showOtherMonths: true,
+      selectOtherMonths: true,
+      monthNames: [
+        "Tháng 1",
+        "Tháng 2",
+        "Tháng 3",
+        "Tháng 4",
+        "Tháng 5",
+        "Tháng 6",
+        "Tháng 7",
+        "Tháng 8",
+        "Tháng 9",
+        "Tháng 10",
+        "Tháng 11",
+        "Tháng 12",
+      ],
+      monthNamesShort: [
+        "Tháng 1",
+        "Tháng 2",
+        "Tháng 3",
+        "Tháng 4",
+        "Tháng 5",
+        "Tháng 6",
+        "Tháng 7",
+        "Tháng 8",
+        "Tháng 9",
+        "Tháng 10",
+        "Tháng 11",
+        "Tháng 12",
+      ],
+      dayNames: [
+        "Thứ 2",
+        "Thứ 3",
+        "Thứ 4",
+        "Thứ 5",
+        "Thứ 6",
+        "Thứ 7",
+        "Chủ nhật",
+      ],
+      dayNamesShort: ["T2", "T3", "T4", "T5", "T6", "T7", "CN"],
+      dayNamesMin: ["T2", "T3", "T4", "T5", "T6", "T7", "CN"],
+      firstDay: 1, // Start with Monday
+      showButtonPanel: false,
+      constrainInput: true,
+      beforeShow: function (input, inst) {
+        // Add custom class to the datepicker
+        setTimeout(function () {
+          inst.dpDiv.addClass("custom-datepicker");
+
+          // Replace default arrows with FontAwesome icons
+          $(".ui-datepicker-prev, .ui-datepicker-next").html("");
+
+          // Custom month and year dropdowns
+          customizeSelectElements();
+
+          // Position the datepicker under the input field
+          var inputField = $(input);
+          var inputOffset = inputField.offset();
+          var inputHeight = inputField.outerHeight();
+
+          // Kiểm tra xem có đang ở chế độ mobile không
+          if (window.innerWidth < 768) {
+            // Trên mobile, hiển thị ở giữa màn hình
+            positionDatepickerForMobile(inst.dpDiv);
+          } else {
+            // Trên desktop, hiển thị dưới input
+            inst.dpDiv.css({
+              top: inputOffset.top + inputHeight + 5,
+              left: inputOffset.left,
+              position: "absolute",
+            });
+          }
+
+          // Điều chỉnh thứ tự các ngày trong tuần và thêm className cho table
+          reorganizeDaysOfWeek();
+        }, 0);
+      },
+      onChangeMonthYear: function (year, month, inst) {
+        // When month or year changes, reapply customizations
+        setTimeout(function () {
+          customizeSelectElements();
+
+          // Lấy lại input field từ inst
+          var inputField = $(inst.input);
+          var inputOffset = inputField.offset();
+          var inputHeight = inputField.outerHeight();
+
+          // Kiểm tra xem có đang ở chế độ mobile không
+          if (window.innerWidth < 768) {
+            positionDatepickerForMobile(inst.dpDiv);
+          } else {
+            // Duy trì vị trí dưới input khi thay đổi tháng/năm
+            inst.dpDiv.css({
+              top: inputOffset.top + inputHeight + 5,
+              left: inputOffset.left,
+              position: "absolute",
+            });
+          }
+
+          // Điều chỉnh thứ tự các ngày trong tuần
+          reorganizeDaysOfWeek();
+        }, 0);
+      },
+      onClose: function () {
+        // Clean up overlay
+        closeDatepicker();
+      },
+      onSelect: function (dateText, inst) {
+        // Add animation when a date is selected
+        $(this).addClass("date-selected");
+        setTimeout(function () {
+          $(inst.input).removeClass("date-selected");
+        }, 300);
+
+        // Clean up
+        closeDatepicker();
+      },
+    });
+
+    // Make the date input readonly to prevent keyboard on mobile
+    $(".datepicker").attr("readonly", true);
+
+    // Open datepicker when the calendar icon is clicked
+    $(".date-icon").on("click", function () {
+      $(this).prev(".datepicker").datepicker("show");
+    });
+
+    // Open datepicker when the input is clicked
+    $(".datepicker").on("click", function () {
+      $(this).datepicker("show");
     });
   }
 
@@ -212,5 +342,111 @@ function preventNonNumericalInput(e) {
     (e.keyCode < 96 || e.keyCode > 105)
   ) {
     e.preventDefault();
+  }
+}
+
+// Function to customize the select elements in the datepicker
+function customizeSelectElements() {
+  // Add dropdown icon to month and year selects
+  $(".ui-datepicker-month, .ui-datepicker-year").each(function () {
+    var wrapper = $(this).parent();
+    if (!wrapper.hasClass("select-styled")) {
+      wrapper.addClass("select-styled");
+
+      // Thêm mũi tên dropdown
+      if ($(this).next(".select-arrow").length === 0) {
+        $('<i class="fas fa-angle-down select-arrow"></i>').insertAfter(
+          $(this)
+        );
+      }
+
+      // Thêm hiệu ứng khi hover
+      $(this).hover(
+        function () {
+          $(this).css("color", "#ff72b4");
+        },
+        function () {
+          $(this).css("color", "#ff72b4");
+        }
+      );
+    }
+  });
+
+  // Thêm kiểu dáng riêng cho dropdown của tháng và năm
+  $(".ui-datepicker-month").css({
+    "border-radius": "20px",
+    "padding-right": "15px !important",
+  });
+
+  $(".ui-datepicker-year").css({
+    "border-radius": "20px",
+    "padding-right": "15px !important",
+  });
+}
+
+// Function to position the datepicker correctly on mobile
+function positionDatepickerForMobile(dpDiv) {
+  // Check if we're on mobile
+  if (window.innerWidth < 768) {
+    // Center the datepicker on screen
+    dpDiv.css({
+      position: "fixed",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      zIndex: 9999,
+      width: "300px",
+    });
+
+    // Add overlay if it doesn't exist
+    if ($(".datepicker-overlay").length === 0) {
+      $("body").append('<div class="datepicker-overlay"></div>');
+      $(".datepicker-overlay")
+        .css({
+          display: "block",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: "rgba(0,0,0,0.5)",
+          zIndex: 9998,
+        })
+        .on("click", function () {
+          $(".datepicker").datepicker("hide");
+          $(this).remove();
+        });
+    }
+  } else {
+    // Reset to default positioning on desktop
+    $(".datepicker-overlay").remove();
+  }
+}
+
+// Add this function after document ready to ensure datepicker position is correct after window resize
+$(window).on("resize", function () {
+  // Hide any open datepickers when resizing
+  $(".datepicker").datepicker("hide");
+});
+
+// Add this function to reset position when datepicker is closed
+function closeDatepicker() {
+  $(".datepicker-overlay").remove();
+}
+
+// Function to reorganize days of week
+function reorganizeDaysOfWeek() {
+  // Điều chỉnh thứ tự các ngày trong tuần
+  var headers = $(".ui-datepicker-calendar thead tr th");
+  if (headers.length === 7) {
+    // Đảm bảo CN nằm ở cuối
+    var sunday = headers.eq(0).detach();
+    $(".ui-datepicker-calendar thead tr").append(sunday);
+
+    // Đồng thời cập nhật lại các ngày trong từng tuần
+    $(".ui-datepicker-calendar tbody tr").each(function () {
+      var firstDay = $(this).find("td:first-child").detach();
+      $(this).append(firstDay);
+    });
   }
 }

@@ -1802,3 +1802,554 @@ footer {
   visibility: visible;
   transform: translateY(0);
 }
+
+/* Additional Date Picker Styling */
+.ui-datepicker {
+  position: absolute !important;
+  z-index: 1000 !important;
+  margin-top: 1px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 320px !important;
+}
+
+.ui-datepicker .ui-datepicker-header {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eee;
+  padding: 12px !important;
+}
+
+.ui-datepicker-title {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui-datepicker-month,
+.ui-datepicker-year {
+  background-color: transparent !important;
+  border: none !important;
+  color: #ff72b4 !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  padding: 5px 20px 5px 10px !important;
+  border-radius: 20px !important;
+  cursor: pointer !important;
+  position: relative;
+  outline: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.ui-datepicker-month ~ .select-arrow,
+.ui-datepicker-year ~ .select-arrow {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff72b4;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.ui-datepicker-month:hover,
+.ui-datepicker-year:hover {
+  background-color: #ffecf5 !important;
+}
+
+.ui-datepicker-month {
+  margin-right: 5px !important;
+}
+
+.ui-datepicker-year {
+  margin-left: 5px !important;
+}
+
+.ui-datepicker table {
+  margin: 0;
+  width: 100%;
+}
+
+.ui-datepicker th {
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 10px 0;
+  color: #666;
+  text-align: center;
+  font-weight: 500;
+}
+
+.ui-datepicker td {
+  padding: 1px;
+  border: none;
+}
+
+.ui-datepicker td a,
+.ui-datepicker td span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 36px;
+  border-radius: 50%;
+  color: #333;
+  font-size: 14px;
+}
+
+.ui-datepicker td a.ui-state-default {
+  background: transparent;
+  border: none;
+}
+
+.ui-datepicker td a.ui-state-active {
+  background-color: #ff72b4 !important;
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.ui-datepicker td a.ui-state-highlight {
+  background-color: #f0f0f0;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  top: 15px;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+  left: 10px;
+}
+
+.ui-datepicker .ui-datepicker-next {
+  right: 10px;
+}
+
+.ui-datepicker .ui-icon {
+  display: none;
+}
+
+.ui-datepicker .ui-datepicker-prev:before,
+.ui-datepicker .ui-datepicker-next:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.ui-datepicker .ui-datepicker-prev:before {
+  content: "\f053"; /* chevron-left */
+}
+
+.ui-datepicker .ui-datepicker-next:before {
+  content: "\f054"; /* chevron-right */
+}
+
+/* Custom styling for date input */
+.form-input.datepicker {
+  background-color: #fff;
+  cursor: pointer;
+  padding-right: 40px;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.3s ease;
+  border-color: #ddd;
+}
+
+.form-input.datepicker:hover,
+.form-input.datepicker:focus {
+  border-color: #ff72b4;
+}
+
+.date-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.form-input.datepicker:hover + .date-icon,
+.form-input.datepicker:focus + .date-icon {
+  color: #ff72b4;
+}
+
+/* Highlighted selected date */
+.ui-datepicker td a.ui-state-active {
+  background-color: #ff72b4 !important;
+  color: #fff !important;
+  font-weight: 500;
+}
+
+/* Fix for date rows */
+.ui-datepicker tr {
+  border: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.ui-datepicker td {
+  border: none;
+  padding: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header styling */
+.ui-datepicker-header {
+  border-bottom: 1px solid #eee !important;
+  padding: 12px !important;
+}
+
+.ui-datepicker .ui-datepicker-title select {
+  font-weight: 600;
+}
+
+/* Overlay styling */
+.datepicker-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+.ui-datepicker.custom-datepicker {
+  z-index: 9999 !important;
+}
+
+/* Animation when a date is selected */
+.form-input.datepicker.date-selected {
+  border-color: #ff72b4;
+  box-shadow: 0 0 0 3px rgba(255, 114, 180, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Date cell hover effect */
+.ui-datepicker td a:hover {
+  background-color: #ffecf5 !important;
+  color: #ff72b4 !important;
+}
+
+/* Today date highlight */
+.ui-datepicker td.ui-datepicker-today a {
+  background-color: #ffecf5;
+  color: #ff72b4;
+  font-weight: bold;
+}
+
+/* Better alignment for day names */
+.ui-datepicker th {
+  text-align: center;
+  padding-bottom: 8px;
+  font-weight: 600;
+  color: #666;
+}
+
+/* Fix for mobile display */
+@media (max-width: 767px) {
+  .ui-datepicker {
+    width: 300px !important;
+    max-width: 90vw;
+    font-size: 14px;
+  }
+
+  .ui-datepicker td a,
+  .ui-datepicker td span {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+  }
+
+  .ui-datepicker th {
+    font-size: 12px;
+  }
+
+  .ui-datepicker .ui-datepicker-title select {
+    font-size: 14px !important;
+  }
+}
+
+/* Make sure datepicker appears above everything */
+.ui-datepicker {
+  z-index: 9999 !important;
+}
+
+/* Font styling */
+.ui-datepicker {
+  font-family: "Quicksand", sans-serif !important;
+  width: 330px !important;
+  padding: 0;
+  border: none;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
+  position: absolute !important;
+  z-index: 9999 !important;
+}
+
+/* Header với tháng/năm */
+.ui-datepicker-header {
+  background: #fff !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+  padding: 15px 0 !important;
+  position: relative;
+}
+
+/* Container cho dropdown tháng/năm */
+.ui-datepicker-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0 40px;
+}
+
+/* Dropdown tháng */
+.ui-datepicker-month {
+  color: #ff72b4 !important;
+  font-weight: 600 !important;
+  font-size: 17px !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  cursor: pointer;
+  padding: 5px 10px !important;
+  margin-right: 5px !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Dropdown năm */
+.ui-datepicker-year {
+  color: #ff72b4 !important;
+  font-weight: 600 !important;
+  font-size: 17px !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  cursor: pointer;
+  padding: 5px 10px !important;
+  margin-left: 5px !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Mũi tên next/prev */
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  position: absolute;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+}
+
+.ui-datepicker-prev {
+  left: 15px;
+}
+
+.ui-datepicker-next {
+  right: 15px;
+}
+
+/* Mũi tên biểu tượng */
+.ui-datepicker-prev:before,
+.ui-datepicker-next:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 14px;
+  color: #777;
+}
+
+.ui-datepicker-prev:before {
+  content: "\f053"; /* chevron-left */
+}
+
+.ui-datepicker-next:before {
+  content: "\f054"; /* chevron-right */
+}
+
+/* Hover mũi tên */
+.ui-datepicker-prev:hover,
+.ui-datepicker-next:hover {
+  background-color: #f9f9f9 !important;
+}
+
+.ui-datepicker-prev:hover:before,
+.ui-datepicker-next:hover:before {
+  color: #ff72b4;
+}
+
+/* Ẩn biểu tượng mặc định */
+.ui-datepicker-prev span,
+.ui-datepicker-next span,
+.ui-icon {
+  display: none !important;
+}
+
+/* Bảng ngày */
+.ui-datepicker table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 10px;
+}
+
+/* Tiêu đề ngày trong tuần */
+.ui-datepicker th {
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  color: #777;
+  padding: 10px 0 8px;
+}
+
+/* Ô ngày */
+.ui-datepicker td {
+  text-align: center;
+  padding: 2px;
+}
+
+/* Số ngày */
+.ui-datepicker td a,
+.ui-datepicker td span {
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-align: center;
+  color: #444;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin: 0 auto;
+}
+
+/* Ngày hiện tại */
+.ui-datepicker td.ui-datepicker-today a {
+  background-color: #f9f9f9;
+  color: #ff72b4;
+  font-weight: 600;
+}
+
+/* Ngày được chọn */
+.ui-datepicker td.ui-datepicker-current-day a,
+.ui-datepicker td a.ui-state-active {
+  background-color: #ff72b4 !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* Hover ngày */
+.ui-datepicker td a:hover {
+  background-color: #ffecf5 !important;
+  color: #ff72b4 !important;
+}
+
+/* Ngày của tháng khác */
+.ui-datepicker td.ui-datepicker-other-month a {
+  color: #ccc;
+}
+
+/* Căn chỉnh datepicker */
+.ui-datepicker tr {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 767px) {
+  .ui-datepicker {
+    width: 300px !important;
+    max-width: 90vw;
+  }
+
+  .ui-datepicker td a,
+  .ui-datepicker td span {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .ui-datepicker th {
+    font-size: 12px;
+  }
+}
+
+/* Overlay khi mở datepicker trên mobile */
+.datepicker-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+/* Styling cho input */
+.date-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.form-input.datepicker {
+  padding-right: 40px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.date-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #999;
+  pointer-events: none;
+}
+
+.date-icon i {
+  font-size: 16px;
+}
+
+/* Animation khi chọn ngày */
+.form-input.datepicker.date-selected {
+  border-color: #ff72b4;
+  box-shadow: 0 0 0 3px rgba(255, 114, 180, 0.2);
+}
