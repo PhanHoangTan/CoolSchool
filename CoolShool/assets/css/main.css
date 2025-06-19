@@ -2435,4 +2435,76 @@ footer {
   background-color: #ff72b4;
 }
 
+/* Breadcrumb styles */
+.breadcrumb_nobackground {
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 10px 0;
+  margin-bottom: 40px;
+  background: #fff;
+}
 
+.bread-crumb .breadcrumb {
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+.bread-crumb .breadcrumb li {
+  display: inline-block;
+}
+
+.bread-crumb .breadcrumb li a {
+  color: #898989;
+}
+
+.bread-crumb .breadcrumb li strong {
+  color: #ff72b4;
+  font-weight: 500;
+}
+
+.mr_lr {
+  color: #898989;
+}
+
+/* About page styles */
+.page_about {
+  padding: 30px 0;
+}
+
+.title-base {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #ff72b4;
+  position: relative;
+}
+
+.title-base:after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: #ff72b4;
+  margin: 15px auto;
+}
+
+.section-content {
+  margin-top: 30px;
+}
+
+.section-content h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.section-content p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.a-left {
+  text-align: left;
+}
