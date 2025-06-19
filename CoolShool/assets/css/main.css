@@ -2439,8 +2439,8 @@ footer {
 .breadcrumb_nobackground {
   border-top: 1px solid #f5f5f5;
   border-bottom: 1px solid #f5f5f5;
-  padding: 10px 0;
-  margin-bottom: 40px;
+  padding: 0;
+  margin: 0;
   background: #fff;
 }
 
@@ -2475,19 +2475,10 @@ footer {
 .title-base {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 25px;
+
   text-align: center;
   color: #ff72b4;
   position: relative;
-}
-
-.title-base:after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 2px;
-  background-color: #ff72b4;
-  margin: 15px auto;
 }
 
 .section-content {
