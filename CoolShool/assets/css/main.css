@@ -2469,16 +2469,48 @@ footer {
 
 /* About page styles */
 .page_about {
-  padding: 30px 0;
+  padding: 50px 0;
+  background-image: url('https://bizweb.dktcdn.net/100/347/562/themes/939147/assets/bg_gioithieu.jpg?1706001037574');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #333;
+}
+
+.page_about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.page_about .container {
+  position: relative;
+  z-index: 1;
 }
 
 .title-base {
   font-size: 24px;
   font-weight: 700;
-
+  margin-bottom: 10px;
   text-align: center;
   color: #ff72b4;
   position: relative;
+}
+
+.title-line {
+  text-align: center;
+  margin: 10px 0 20px;
+}
+
+.title-line span {
+  display: inline-block;
+  width: 60px;
+  height: 2px;
+  background-color: #ff72b4;
 }
 
 .section-content {
@@ -2486,8 +2518,17 @@ footer {
 }
 
 .section-content h2 {
-  font-size: 20px;
-  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section-content p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
   color: #333;
 }
 
