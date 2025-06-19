@@ -156,6 +156,7 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .menu-bar-h {
@@ -167,7 +168,7 @@ body {
 .logo.flex_100 {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .logo-wrapper img {
@@ -198,6 +199,7 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .header-nav .item_big {
@@ -208,11 +210,12 @@ body {
   flex-wrap: nowrap; /* Prevent wrapping */
   width: 100%;
   align-items: center; /* Vertically align items */
+  justify-content: center; /* Center the navigation items */
 }
 
 .header-nav .nav-item {
   position: relative;
-  padding: 0 8px; /* Reduced padding to fit all items */
+  padding: 0 15px; /* Increased padding from 8px to 15px to add 10px more space between items */
 }
 
 .header-nav .nav-item.active .a-img {
@@ -285,6 +288,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   margin-left: 8px; /* Small margin to separate from nav items */
 }
 
