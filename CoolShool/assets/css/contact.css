@@ -108,17 +108,18 @@
 }
 
 /* CSS để match đúng với hình mẫu */
-input,
-textarea,
-select {
+/* Thay đổi để giới hạn chỉ trong form liên hệ */
+.page-login input,
+.page-login textarea,
+.page-login select {
   border: 1px solid transparent !important;
   background-color: #f5f5f5 !important;
   border-radius: 0 !important;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+.page-login input:focus,
+.page-login textarea:focus,
+.page-login select:focus {
   border: 1px solid transparent !important;
   outline: none !important;
   box-shadow: none !important;
