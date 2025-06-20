@@ -373,62 +373,48 @@
                       </div>
                     </div>
                   </div>
-
                   <div class="col-xs-12">
-                    <div class="form-coment">
-                      <div class="row">
-                        <div class="margin-top-0 margin-bottom-30">
-                          <h5 class="title-form-coment">
-                            Viết bình luận của bạn:
-                          </h5>
-                        </div>
-                        <div class="">
-                          <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-6">
-                              <fieldset class="form-group">
-                                <input
-                                  placeholder="Họ và tên"
-                                  type="text"
-                                  class="form-control form-control-lg"
-                                  value=""
-                                  id="full-name"
-                                  name="Author"
-                                  required="" />
-                              </fieldset>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6">
-                              <fieldset class="form-group">
-                                <input
-                                  placeholder="Email"
-                                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
-                                  type="email"
-                                  class="form-control form-control-lg"
-                                  value=""
-                                  name="Email"
-                                  required="" />
-                              </fieldset>
-                            </div>
+                    <div class="comment-section">
+                      <h3 class="comment-heading">Viết bình luận của bạn:</h3>
+
+                      <div class="comment-form-container">
+                        <div class="comment-form-row">
+                          <div class="comment-form-field">
+                            <input
+                              type="text"
+                              placeholder="Họ và tên"
+                              class="comment-input"
+                              name="Author"
+                              required />
+                          </div>
+
+                          <div class="comment-form-field">
+                            <input
+                              type="email"
+                              placeholder="Email"
+                              class="comment-input"
+                              name="Email"
+                              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
+                              required />
                           </div>
                         </div>
-                        <fieldset
-                          class="form-group col-xs-12 col-sm-12 col-md-12">
+
+                        <div class="comment-form-field">
                           <textarea
                             placeholder="Viết bình luận"
-                            class="form-control form-control-lg"
-                            id="comment"
+                            class="comment-textarea"
                             name="Body"
                             rows="6"
-                            required=""></textarea>
-                        </fieldset>
-                        <div
-                          class="margin-bottom-fix margin-bottom-50-article clearfix">
-                          <button type="submit" class="btn btn-primary">
+                            required></textarea>
+                        </div>
+
+                        <div class="comment-form-submit">
+                          <button type="submit" class="comment-submit-btn">
                             Gửi bình luận
                           </button>
                         </div>
                       </div>
                     </div>
-                    <!-- End form mail -->
                   </div>
                 </div>
               </article>
