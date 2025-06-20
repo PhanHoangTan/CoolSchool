@@ -324,9 +324,277 @@ $(document).ready(function () {
     // $(".faq-question").not(this).removeClass("active");
     // $(".faq-answer").not(answer).css("max-height", "0");
   });
-
   // Initialize the FAQ answers to be closed
   $(".faq-answer").css("max-height", "0");
+
+  // Handle search functionality
+  $(".search-bar").on("submit", function (e) {
+    e.preventDefault();
+
+    var searchQuery = $(this).find("input[name='query']").val().toLowerCase();
+
+    // Don't search if query is empty
+    if (searchQuery.trim() === "") {
+      return;
+    }
+
+    // Define news items with their titles and corresponding URLs
+    var newsItems = [
+      {
+        title: "Hệ quốc tế Anh - Nhật",
+        url: "ENJapanProgram.html",
+        image:
+          "https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/1.jpg?v=1550778252097",
+        date: "22/02/2019",
+        excerpt:
+          "Bên cạnh tiếng Anh, tiếng Nhật cũng là một trong những ngôn ngữ của thời kỳ hội nhập toàn cầu. Tr...",
+      },
+      {
+        title: "Hệ đào tạo song ngữ",
+        url: "BilingualProgram.html",
+        image:
+          "https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/6.jpg?v=1550778312287",
+        date: "22/02/2019",
+        excerpt:
+          "Với mong muốn giúp trẻ đa dạng ngôn ngữ trong thời kỳ hội nhập, Trường Mầm non Quốc tế Cool Schoo...",
+      },
+      {
+        title: "Hệ quốc tế Anh - Anh",
+        url: "EnEnProgram.html",
+        image:
+          "https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/9.jpg?v=1550778282473",
+        date: "22/02/2019",
+        excerpt:
+          "Trong xu thế tiếng Anh đã trở thành ngôn ngữ toàn cầu, ngay từ khi còn nhỏ, các bậc phụ huynh và...",
+      },
+      {
+        title: "Chương trình học chuẩn quốc tế",
+        url: "standardProgram.html",
+        image:
+          "https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/7.jpg?v=1550779824993",
+        date: "22/02/2019",
+        excerpt:
+          "Được thiết kế và triển khai theo triết lý giáo dục của tiến sĩ Maria Montessori (31/8/1870 –...",
+      },
+      {
+        title: "Chương trình Văn - Thể - Mỹ",
+        url: "USAProgram.html",
+        image:
+          "https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/8.jpg?v=1550779730693",
+        date: "22/02/2019",
+        excerpt:
+          "Cùng với sự phát triển của chương trình học thuật, chương trình phát triển Văn – Thể – Mỹ cũng là...",
+      },
+      {
+        title: "Chương trình học văn hóa nhật",
+        url: "JapanProgram.html",
+        image:
+          "https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/3.jpg?v=1550779664717",
+        date: "22/02/2019",
+        excerpt:
+          "Kỹ năng sống là một trong những kiến thức nền tảng quan trọng nhất, quyết định sự tồn tại, phát t...",
+      },
+    ];
+
+    // Redirect to search results page with the query
+    window.location.href =
+      "search-results.html?query=" + encodeURIComponent(searchQuery);
+  });
+  // Check for search parameter on search results page
+  if (window.location.pathname.endsWith("search-results.html")) {
+    var urlParams = new URLSearchParams(window.location.search);
+    var searchQuery = urlParams.get("query");
+
+    if (searchQuery) {
+      searchQuery = searchQuery.toLowerCase();
+      displaySearchResults(searchQuery);
+    }
+  }
+
+  // Function to display search results
+  function displaySearchResults(searchQuery) {
+    // Define news items with their titles and corresponding URLs
+    var newsItems = [
+      {
+        title: "Hệ quốc tế Anh - Nhật",
+        url: "ENJapanProgram.html",
+        image:
+          "https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/1.jpg?v=1550778252097",
+        date: "22/02/2019",
+        excerpt:
+          "Bên cạnh tiếng Anh, tiếng Nhật cũng là một trong những ngôn ngữ của thời kỳ hội nhập toàn cầu.",
+      },
+      {
+        title: "Hệ đào tạo song ngữ",
+        url: "BilingualProgram.html",
+        image:
+          "https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/6.jpg?v=1550778312287",
+        date: "22/02/2019",
+        excerpt:
+          "Với mong muốn giúp trẻ đa dạng ngôn ngữ trong thời kỳ hội nhập, Trường Mầm non Quốc tế Cool School mang đến chương trình đào tạo song ngữ.",
+      },
+      {
+        title: "Hệ quốc tế Anh - Anh",
+        url: "EnEnProgram.html",
+        image:
+          "https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/9.jpg?v=1550778282473",
+        date: "22/02/2019",
+        excerpt:
+          "Trong xu thế tiếng Anh đã trở thành ngôn ngữ toàn cầu, ngay từ khi còn nhỏ, các bậc phụ huynh và nhà trường luôn mong muốn trẻ được làm quen.",
+      },
+      {
+        title: "Chương trình học chuẩn quốc tế",
+        url: "standardProgram.html",
+        image:
+          "https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/7.jpg?v=1550779824993",
+        date: "22/02/2019",
+        excerpt:
+          "Được thiết kế và triển khai theo triết lý giáo dục của tiến sĩ Maria Montessori.",
+      },
+      {
+        title: "Chương trình Văn - Thể - Mỹ",
+        url: "USAProgram.html",
+        image:
+          "https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/8.jpg?v=1550779730693",
+        date: "22/02/2019",
+        excerpt:
+          "Cùng với sự phát triển của chương trình học thuật, chương trình phát triển Văn – Thể – Mỹ.",
+      },
+      {
+        title: "Chương trình học văn hóa nhật",
+        url: "JapanProgram.html",
+        image:
+          "https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/3.jpg?v=1550779664717",
+        date: "22/02/2019",
+        excerpt:
+          "Kỹ năng sống là một trong những kiến thức nền tảng quan trọng nhất.",
+      },
+    ];
+
+    // Match search results
+    var matchedItems = newsItems.filter(function (item) {
+      return (
+        item.title.toLowerCase().includes(searchQuery) ||
+        item.excerpt.toLowerCase().includes(searchQuery)
+      );
+    });
+
+    // Update search status container
+    var statusMessage = "";
+    if (matchedItems.length > 0) {
+      statusMessage = "Có " + matchedItems.length + " kết quả tìm kiếm phù hợp";
+    } else {
+      statusMessage =
+        "Không tìm thấy kết quả nào với từ khóa '" + searchQuery + "'";
+    }
+    $(".search-status-container").html("<p>" + statusMessage + "</p>");
+
+    // Update page title to include search query
+    $(".page-title").text("Kết quả tìm kiếm cho: '" + searchQuery + "'");
+
+    // Display results or no results message
+    if (matchedItems.length > 0) {
+      var resultsHTML = "";
+
+      matchedItems.forEach(function (item) {
+        // Highlight the search term in title and excerpt
+        var highlightedTitle = highlightText(item.title, searchQuery);
+        var highlightedExcerpt = highlightText(item.excerpt, searchQuery);
+
+        resultsHTML += `
+          <div class="search-result-item">
+            <div class="search-result-image">
+              <a href="${item.url}">
+                <img src="${item.image}" alt="${item.title}">
+              </a>
+            </div>
+            <div class="search-result-content">
+              <div class="search-result-date">
+                <i class="far fa-calendar-alt"></i> ${item.date}
+              </div>
+              <h3 class="search-result-title">
+                <a href="${item.url}">${highlightedTitle}</a>
+              </h3>
+              <div class="search-result-excerpt">
+                ${highlightedExcerpt}
+              </div>
+              <a href="${item.url}" class="search-result-link">
+                Xem chi tiết <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        `;
+      });
+
+      $(".search-results-container").html(resultsHTML);
+      $(".no-results-container").hide();
+    } else {
+      $(".search-results-container").empty();
+      $(".no-results-container").show();
+    }
+  }
+
+  // Helper function to highlight search text
+  function highlightText(text, searchTerm) {
+    if (!searchTerm) return text;
+
+    var regex = new RegExp("(" + escapeRegExp(searchTerm) + ")", "gi");
+    return text.replace(regex, '<span class="search-highlight">$1</span>');
+  }
+
+  // Helper function to escape regex special characters
+  function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  // Check for search parameter on news page
+  if (window.location.pathname.endsWith("news.html")) {
+    var urlParams = new URLSearchParams(window.location.search);
+    var searchParam = urlParams.get("search");
+
+    if (searchParam) {
+      // Highlight search results or show message
+      highlightSearchResults(searchParam);
+    }
+  }
+
+  // Function to highlight search results on news page
+  function highlightSearchResults(searchQuery) {
+    searchQuery = searchQuery.toLowerCase();
+    var foundItems = 0;
+
+    // Look through all news items
+    $(".news-item").each(function () {
+      var newsTitle = $(this).find("h3 a").text().toLowerCase();
+      var newsDesc = $(this).find(".news-desc p").text().toLowerCase();
+
+      if (newsTitle.includes(searchQuery) || newsDesc.includes(searchQuery)) {
+        // Highlight the matching item
+        $(this).addClass("search-highlight");
+        foundItems++;
+      } else {
+        // Optionally hide non-matching items
+        // $(this).hide();
+      }
+    });
+
+    // Show search results message
+    if (foundItems > 0) {
+      $(".page-title").after(
+        "<div class='search-results-info'>Tìm thấy " +
+          foundItems +
+          " kết quả cho '" +
+          searchQuery +
+          "'</div>"
+      );
+    } else {
+      $(".page-title").after(
+        "<div class='search-results-info'>Không tìm thấy kết quả cho '" +
+          searchQuery +
+          "'</div>"
+      );
+    }
+  }
 });
 
 // Function to initialize Swiper for testimonials
