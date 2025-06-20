@@ -36,6 +36,11 @@
       rel="stylesheet"
       type="text/css"
       media="all" />
+    <link
+      href="assets/css/contact.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all" />
   </head>
   <body class="contact-page">
     <div class="page-container">
@@ -206,7 +211,110 @@
             </div>
           </section>
         </div>
+
+        <!-- Khu vực bản đồ và thông tin liên hệ -->
+        <div class="page_contact">
+          <div class="container">
+            <div class="row">
+              <!-- Khu vực bản đồ - chiếm toàn bộ chiều rộng -->
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="section_mapss">
+                  <div class="box-maps">
+                    <div class="iFrameMap">
+                      <div id="contact_map" class="map">
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.863981044336!2d105.8100811508075!3d21.03703899287489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab145bf89bd7%3A0xd94a869b494c04b6!2zMjY2IMSQ4buZaSBD4bqlbiwgVsSpbmggUGjDumMsIEJhIMSQw6xuaCwgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1624007683264!5m2!1sen!2s"
+                          width="100%"
+                          height="450"
+                          style="border: 0"
+                          allowfullscreen=""
+                          loading="lazy"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Khu vực thông tin liên hệ và form - hai cột -->
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                  <!-- Thông tin liên hệ - cột bên trái -->
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contact_r">
+                    <ul class="contact">
+                      <li class="li_footer_h">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span
+                          >Toà nhà Ladeco, 266 Đội Cấn, phường Liễu Giai, Quận
+                          Ba Đình, Hà Nội</span
+                        >
+                      </li>
+                      <li class="li_footer_h">
+                        <i class="fas fa-mobile-alt"></i>
+                        <a href="tel:19006750">19006750</a>
+                      </li>
+                      <li class="li_footer_h">
+                        <i class="far fa-envelope"></i>
+                        <a href="mailto:cooltteam@gmail.com"
+                          >cooltteam@gmail.com</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Form liên hệ - cột bên phải -->
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 page-login">
+                    <h1 class="title-head-contact a-left">
+                      <span>Liên hệ với chúng tôi</span>
+                    </h1>
+                    <div id="pagelogin">
+                      <form method="post" action="" id="contact">
+                        <div class="form-signup clearfix">
+                          <div class="row group_contact">
+                            <fieldset
+                              class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <input
+                                placeholder="Họ và tên"
+                                type="text"
+                                class="form-control"
+                                required
+                                name="contact[Name]" />
+                            </fieldset>
+                            <fieldset
+                              class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <input
+                                placeholder="Email"
+                                type="email"
+                                required
+                                class="form-control"
+                                name="contact[email]" />
+                            </fieldset>
+                            <fieldset
+                              class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <textarea
+                                placeholder="Nội dung"
+                                name="contact[body]"
+                                class="form-control content-area"
+                                rows="5"
+                                required></textarea>
+                            </fieldset>
+                            <div
+                              class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <button type="submit" class="btn btn-primary">
+                                Gửi liên hệ
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
+
       <footer>
         <div class="footer-main">
           <div class="container">
