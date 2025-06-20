@@ -2,9 +2,9 @@
 
 /* Breadcrumb styles */
 .breadcrumb_nobackground {
-  background-color: #f5f5f5;
-  padding: 15px 0;
-  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .bread-crumb {
@@ -12,14 +12,7 @@
 }
 
 .crumb-border {
-  display: block;
-  height: 1px;
-  background: #e5e5e5;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  z-index: 0;
+  display: none; /* Hide the horizontal line */
 }
 
 .breadcrumb {
