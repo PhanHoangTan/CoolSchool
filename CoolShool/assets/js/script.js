@@ -50,6 +50,34 @@ $(document).ready(function () {
     }
   });
 
+  // Smooth scroll from hero to registration form
+  $(".hero-btn").on("click", function (e) {
+    e.preventDefault();
+    var targetSection = $($(this).attr("href"));
+    if (targetSection.length) {
+      $("html, body").animate(
+        {
+          scrollTop: targetSection.offset().top - 80,
+        },
+        1000
+      );
+    }
+  });
+
+  // Smooth scroll from tuition buttons to registration form
+  $(".tuition-button").on("click", function (e) {
+    e.preventDefault();
+    var targetSection = $($(this).attr("href"));
+    if (targetSection.length) {
+      $("html, body").animate(
+        {
+          scrollTop: targetSection.offset().top - 80,
+        },
+        1000
+      );
+    }
+  });
+
   // Mobile menu toggle
   $(".nav-mobile-button").on("click", function () {
     $(".header-nav").slideToggle();
@@ -276,6 +304,29 @@ $(document).ready(function () {
     );
     return false;
   });
+
+  // FAQ Accordion
+  $(".faq-question").on("click", function () {
+    // Toggle the active class on the clicked question
+    $(this).toggleClass("active");
+
+    // Toggle the display of the answer
+    var answer = $(this).next(".faq-answer");
+
+    // If the answer is visible, slide it up, otherwise slide it down
+    if (answer.css("max-height") !== "0px") {
+      answer.css("max-height", "0");
+    } else {
+      answer.css("max-height", answer[0].scrollHeight + "px");
+    }
+
+    // Close other open FAQs (uncomment to have only one open at a time)
+    // $(".faq-question").not(this).removeClass("active");
+    // $(".faq-answer").not(answer).css("max-height", "0");
+  });
+
+  // Initialize the FAQ answers to be closed
+  $(".faq-answer").css("max-height", "0");
 });
 
 // Function to initialize Swiper for testimonials
