@@ -48,7 +48,7 @@
 }
 
 .hero-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -846,11 +846,11 @@
   .process-item {
     width: 50%;
   }
-  
+
   .program-item {
     width: 50%;
   }
-  
+
   .tuition-item {
     width: 50%;
   }
@@ -860,28 +860,28 @@
   .hero-content h1 {
     font-size: 32px;
   }
-  
+
   .hero-content p {
     font-size: 16px;
   }
-  
+
   .process-item {
     width: 100%;
   }
-  
+
   .program-item {
     width: 100%;
   }
-  
+
   .tuition-item {
     width: 100%;
   }
-  
+
   .form-column {
     width: 100%;
     margin-bottom: 30px;
   }
-  
+
   .form-column:last-child {
     margin-bottom: 0;
   }
