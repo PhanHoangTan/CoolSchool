@@ -4,11 +4,12 @@
 .breadcrumb_nobackground {
   background-color: #fff;
   padding: 0;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .bread-crumb {
   position: relative;
+  padding: 20px 0;
 }
 
 .crumb-border {

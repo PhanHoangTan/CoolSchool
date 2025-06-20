@@ -2468,6 +2468,10 @@ footer {
   background: #fff;
 }
 
+.bread-crumb {
+  padding: 20px 0;
+}
+
 .bread-crumb .breadcrumb {
   margin: 0;
   padding: 0;
