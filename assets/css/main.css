@@ -456,6 +456,7 @@ li {
 }
 
 .section_register .pull-right {
+  margin-top: 20px;
   float: right;
 }
 
@@ -502,6 +503,7 @@ li {
 .wrapper-btn {
   display: flex;
   align-items: center;
+  margin-top: 20px;
   height: 100%;
 }
 
