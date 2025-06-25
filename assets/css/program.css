@@ -305,6 +305,38 @@
   .date-number {
     font-size: 22px;
   }
+
+  /* Enhanced content responsiveness for iPad */
+  .container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .article-details {
+    padding: 0 10px;
+  }
+
+  .article-content .rte {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .article-content img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .article-content table {
+    width: 100% !important;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .article-content iframe {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 /* Mobile Styles */
@@ -423,6 +455,62 @@
   .f-right {
     float: none;
   }
+
+  /* Enhanced content responsiveness for mobile */
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .article-details {
+    padding: 0 5px;
+  }
+
+  .article-content .rte {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .article-content img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .article-content table {
+    width: 100% !important;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .article-content iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Fix for content overflow */
+  .article-content p,
+  .article-content li,
+  .article-content h3,
+  .article-content h4 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .article-content ul,
+  .article-content ol {
+    padding-left: 20px;
+  }
+
+  .col-xs-12 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
 }
 
 /* Small mobile devices */
@@ -452,5 +540,34 @@
 
   .date-month {
     font-size: 12px;
+  }
+
+  /* Additional fixes for extra small screens */
+  .article-content {
+    padding: 0 10px;
+  }
+
+  .container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .article-details {
+    padding: 0;
+  }
+
+  .article-content ul,
+  .article-content ol {
+    padding-left: 15px;
+  }
+
+  .article-image {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+
+  .col-xs-12 {
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
