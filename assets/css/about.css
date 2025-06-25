@@ -59,3 +59,126 @@
   line-height: 1.8;
   text-align: justify;
 }
+
+/* Tablet/iPad responsive styles (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .page_about {
+    padding: 40px 0;
+  }
+
+  .page_about .container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .title-base {
+    font-size: 22px;
+  }
+
+  .section-content {
+    padding: 0 15px;
+  }
+
+  .section-content h2 {
+    font-size: 20px;
+  }
+
+  .section-content p {
+    font-size: 15px;
+  }
+
+  /* Fix for tablet container width */
+  .col-sm-12 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Ensure proper content width */
+  .info {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 5px;
+  }
+}
+
+/* Mobile responsive styles */
+@media (max-width: 767px) {
+  .page_about {
+    padding: 30px 0;
+  }
+
+  .page_about .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .section-content {
+    padding: 0;
+  }
+
+  .mobile-content-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    overflow-x: hidden;
+  }
+
+  .about-content-mobile {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .section-content h2 {
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .section-content p {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .margin-bottom-30 {
+    margin-bottom: 20px;
+  }
+
+  /* Fix for mobile container width */
+  .col-sm-12,
+  .col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Fix for text overflow */
+  .info {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page_about .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .title-base {
+    font-size: 22px;
+  }
+
+  .section-content h2 {
+    font-size: 18px;
+  }
+
+  /* Additional padding for smaller screens */
+  .info {
+    padding: 0 15px;
+  }
+}

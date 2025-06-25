@@ -78,9 +78,75 @@ $(document).ready(function () {
     }
   });
 
+  // Create mobile menu overlay
+  if ($(".mobile-menu-overlay").length === 0) {
+    $("body").append('<div class="mobile-menu-overlay"></div>');
+  }
+
   // Mobile menu toggle
   $(".nav-mobile-button").on("click", function () {
-    $(".header-nav").slideToggle();
+    $(".header-nav").toggleClass("active");
+    $(".mobile-menu-overlay").toggleClass("active");
+    $("body").toggleClass("menu-open");
+  });
+
+  // Close mobile menu when clicking overlay
+  $(".mobile-menu-overlay").on("click", function () {
+    $(".header-nav").removeClass("active");
+    $(".mobile-menu-overlay").removeClass("active");
+    $("body").removeClass("menu-open");
+  });
+
+  // Toggle submenu on mobile
+  $(".nav-item > .a-img").on("click", function (e) {
+    if ($(window).width() < 992) {
+      if ($(this).parent().has(".item_small").length) {
+        e.preventDefault();
+        $(this).parent().toggleClass("active");
+        $(this).parent().find(".item_small").slideToggle(300);
+
+        // Close other open submenus
+        $(this).parent().siblings(".nav-item").removeClass("active");
+        $(this).parent().siblings(".nav-item").find(".item_small").slideUp(300);
+      }
+    }
+  });
+
+  // Initialize dropdown menus for mobile
+  function initMobileMenu() {
+    if ($(window).width() < 992) {
+      // Hide all dropdown menus initially
+      $(".item_small").hide();
+
+      // Remove any active classes
+      $(".nav-item").removeClass("active");
+    }
+  }
+
+  // Run on page load
+  initMobileMenu();
+
+  // Run on window resize
+  $(window).resize(function () {
+    initMobileMenu();
+  });
+
+  // Mobile search toggle
+  $(".header_search .btn.icon-fallback-text").on("click", function (e) {
+    if ($(window).width() < 768) {
+      e.preventDefault();
+      $(".header_search").toggleClass("active");
+    }
+  });
+
+  // Close mobile search when clicking outside
+  $(document).on("click", function (e) {
+    if (
+      !$(e.target).closest(".header_search").length &&
+      $(".header_search").hasClass("active")
+    ) {
+      $(".header_search").removeClass("active");
+    }
   });
 
   // Smooth scroll for anchor links
