@@ -51,6 +51,7 @@
 .content_all {
   margin-bottom: 40px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .page-header {
@@ -92,6 +93,8 @@
   background: #fff;
   transition: all 0.3s ease;
   cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* News image */
@@ -303,25 +306,72 @@
   border-left: 4px solid #ff9a00;
 }
 
+/* Global box-sizing fix */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 /* Responsive styles */
 @media (max-width: 991px) {
   .news-grid {
     grid-template-columns: repeat(2, 1fr);
+    grid-gap: 25px;
   }
 
   .page-title {
     font-size: 26px;
   }
+
+  .container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+
+  .news-image img {
+    height: 190px;
+  }
+
+  .bread-crumb {
+    padding: 15px 0;
+  }
 }
 
 @media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .page-container {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    margin: 0 auto;
+  }
+
   .news-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-gap: 15px;
   }
 
   .page-title {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  .page-title:after {
+    width: 60px;
+    bottom: -8px;
   }
 
   .news-info h3 {
@@ -333,17 +383,78 @@
   }
 
   .news-image img {
-    height: 180px;
+    height: 160px;
+  }
+
+  .bread-crumb {
+    padding: 10px 0;
+  }
+
+  .breadcrumb li a,
+  .breadcrumb li strong {
+    font-size: 13px;
+  }
+
+  .content_blog {
+    padding: 10px;
+  }
+
+  .content_right h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .summary_item_blog {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .news-author {
+    font-size: 12px;
+  }
+
+  .pagination-wrapper {
+    margin-top: 20px;
+  }
+
+  .pagination li {
+    margin: 0 3px;
+  }
+
+  .pagination li a {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+  }
+
+  /* Fix for content overflow */
+  .content_all {
+    overflow-x: hidden;
+    padding: 0 10px;
+  }
+
+  main {
+    overflow-x: hidden;
+    width: 100%;
   }
 }
 
 @media (max-width: 576px) {
   .news-grid {
     grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 0 10px;
   }
 
   .page-title {
-    font-size: 22px;
+    font-size: 20px;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .page-title:after {
+    width: 50px;
+    bottom: -7px;
   }
 
   .news-date {
@@ -351,10 +462,126 @@
     padding: 3px 8px;
   }
 
+  .news-image img {
+    height: 180px;
+  }
+
   .pagination li a {
     width: 30px;
     height: 30px;
     line-height: 30px;
     font-size: 12px;
+  }
+
+  .news-info {
+    padding: 12px 5px;
+  }
+
+  .news-info h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .news-desc {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .content_blog {
+    padding: 10px 5px;
+  }
+
+  .content_right h3 {
+    font-size: 15px;
+  }
+
+  .time_post {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .summary_item_blog {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .search-results-info {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  /* Fix for small screens */
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .bread-crumb {
+    padding: 8px 0;
+  }
+
+  .breadcrumb li a,
+  .breadcrumb li strong {
+    font-size: 12px;
+  }
+
+  .mr_lr {
+    font-size: 12px;
+  }
+
+  .pagination li {
+    margin: 0 2px;
+  }
+
+  .pagination li a {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 375px) {
+  .news-grid {
+    grid-gap: 15px;
+    padding: 0 5px;
+  }
+
+  .page-title {
+    font-size: 18px;
+  }
+
+  .page-title:after {
+    width: 40px;
+    height: 2px;
+  }
+
+  .news-image img {
+    height: 160px;
+  }
+
+  .news-info h3 {
+    font-size: 14px;
+  }
+
+  .news-desc {
+    font-size: 12px;
+  }
+
+  .content_right h3 {
+    font-size: 14px;
+  }
+
+  .container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .pagination li a {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 10px;
   }
 }
