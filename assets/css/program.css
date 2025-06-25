@@ -113,6 +113,13 @@
   font-size: 16px;
   line-height: 1.7;
   color: #333;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.article-content .rte {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .article-content h3 {
@@ -124,11 +131,15 @@
 
 .article-content p {
   margin-bottom: 18px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .article-content ol {
   margin-left: 20px;
   margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .article-content ol li {
@@ -265,6 +276,13 @@
   text-align: right;
 }
 
+/* Global box-sizing fix */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 /* Enhanced Responsive styles */
 /* Tablet (iPad) Styles */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -311,15 +329,21 @@
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
   }
 
   .article-details {
     padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .article-content .rte {
     overflow-wrap: break-word;
     word-wrap: break-word;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .article-content img {
@@ -341,14 +365,28 @@
 
 /* Mobile Styles */
 @media (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .page-container {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
   .article-wraper {
     padding: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .article-titles {
     font-size: 22px;
     margin-top: -60px;
     padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .article-titles span:after {
@@ -359,6 +397,8 @@
     flex-direction: column;
     text-align: center;
     padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .date-block {
@@ -374,25 +414,36 @@
 
   .article-subtitle {
     font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .article-summary {
     padding-left: 0;
     text-align: center;
     padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .article-content {
     padding: 0 15px;
     font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .article-content h3 {
     font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .article-content ol {
     margin-left: 15px;
+    width: calc(100% - 15px);
+    box-sizing: border-box;
   }
 
   .article-image img {
@@ -402,6 +453,8 @@
   .tag-share {
     padding: 10px 15px;
     margin: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .tag_article {
@@ -416,6 +469,8 @@
   /* Comment form responsive styles */
   .comment-section {
     padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .comment-heading {
@@ -458,18 +513,29 @@
 
   /* Enhanced content responsiveness for mobile */
   .container {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    margin: 0 auto;
   }
 
   .article-details {
-    padding: 0 5px;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .article-content .rte {
     overflow-wrap: break-word;
     word-wrap: break-word;
     hyphens: auto;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 0;
   }
 
   .article-content img {
@@ -495,21 +561,75 @@
   .article-content h4 {
     overflow-wrap: break-word;
     word-wrap: break-word;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .article-content ul,
   .article-content ol {
     padding-left: 20px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
   }
 
   .col-xs-12 {
     padding-left: 10px;
     padding-right: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .row {
-    margin-left: -10px;
-    margin-right: -10px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* Fix for text overflow */
+  .rte p {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    padding: 0;
+  }
+
+  /* Force content to stay within container */
+  main {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .right-content {
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  .article-main {
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+  }
+
+  /* Fix content alignment */
+  .article-main .row {
+    margin: 0;
+  }
+
+  .article-main .col-lg-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .article-main .col-xs-12 {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -544,30 +664,64 @@
 
   /* Additional fixes for extra small screens */
   .article-content {
-    padding: 0 10px;
+    padding: 0 15px;
   }
 
   .container {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-x: hidden;
+    margin: 0 auto;
   }
 
   .article-details {
     padding: 0;
+    overflow-x: hidden;
   }
 
   .article-content ul,
   .article-content ol {
     padding-left: 15px;
+    width: calc(100% - 15px);
   }
 
   .article-image {
-    margin-left: -5px;
-    margin-right: -5px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .col-xs-12 {
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+  }
+
+  /* Force content to stay within viewport */
+  .rte {
+    max-width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* Fix for text overflow */
+  .article-content p {
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    padding: 0;
+  }
+
+  /* Center content properly */
+  .right-content {
+    padding: 0;
+  }
+
+  .article-main {
+    padding: 0;
+  }
+
+  .article-main .row {
+    margin: 0;
   }
 }
