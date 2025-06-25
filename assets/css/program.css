@@ -151,6 +151,7 @@
 .tag_article {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .icon_tag {
@@ -162,6 +163,7 @@
   color: #ff6600;
   margin-right: 5px;
   text-decoration: none;
+  margin-bottom: 5px;
 }
 
 .tag_article a:hover {
@@ -243,46 +245,6 @@
   background-color: #5b4ecc;
 }
 
-/* Responsive styles */
-@media (max-width: 767px) {
-  .article-metadata {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .date-block {
-    margin-right: 0;
-    margin-bottom: 15px;
-    padding: 8px 20px;
-  }
-
-  .metadata-content {
-    width: 100%;
-    text-align: center;
-  }
-
-  .article-summary {
-    padding-left: 0;
-    text-align: center;
-  }
-
-  .social-sharing {
-    text-align: left;
-    margin-top: 15px;
-  }
-
-  /* Comment form responsive styles */
-  .comment-form-row {
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .comment-submit-btn {
-    width: 100%;
-    padding: 12px 15px;
-  }
-}
-
 /* Fix for row-noGutter */
 .row-noGutter {
   margin-left: 0;
@@ -301,4 +263,194 @@
 
 .a-right {
   text-align: right;
+}
+
+/* Enhanced Responsive styles */
+/* Tablet (iPad) Styles */
+@media (min-width: 768px) and (max-width: 991px) {
+  .article-titles {
+    font-size: 24px;
+    margin-top: -80px;
+  }
+
+  .article-subtitle {
+    font-size: 20px;
+  }
+
+  .article-content {
+    padding: 0 15px;
+  }
+
+  .article-content h3 {
+    font-size: 20px;
+  }
+
+  .article-content p,
+  .article-content ol li {
+    font-size: 15px;
+  }
+
+  .article-image img {
+    max-width: 90%;
+  }
+
+  .comment-form-row {
+    gap: 15px;
+  }
+
+  .date-block {
+    padding: 5px 12px;
+  }
+
+  .date-number {
+    font-size: 22px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .article-wraper {
+    padding: 20px 0;
+  }
+
+  .article-titles {
+    font-size: 22px;
+    margin-top: -60px;
+    padding: 0 15px;
+  }
+
+  .article-titles span:after {
+    width: 50px;
+  }
+
+  .article-metadata {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .date-block {
+    margin-right: 0;
+    margin-bottom: 15px;
+    padding: 8px 20px;
+  }
+
+  .metadata-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .article-subtitle {
+    font-size: 18px;
+  }
+
+  .article-summary {
+    padding-left: 0;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .article-content {
+    padding: 0 15px;
+    font-size: 15px;
+  }
+
+  .article-content h3 {
+    font-size: 18px;
+  }
+
+  .article-content ol {
+    margin-left: 15px;
+  }
+
+  .article-image img {
+    border-radius: 5px;
+  }
+
+  .tag-share {
+    padding: 10px 15px;
+    margin: 20px 0;
+  }
+
+  .tag_article {
+    margin-bottom: 10px;
+  }
+
+  .social-sharing {
+    text-align: left;
+    margin-top: 15px;
+  }
+
+  /* Comment form responsive styles */
+  .comment-section {
+    padding: 0 15px;
+  }
+
+  .comment-heading {
+    font-size: 18px;
+  }
+
+  .comment-form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .comment-input,
+  .comment-textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .comment-textarea {
+    min-height: 120px;
+  }
+
+  .comment-submit-btn {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+
+  /* Fix for small screens */
+  .no-padding {
+    padding: 0 15px !important;
+  }
+
+  .a-right {
+    text-align: left;
+  }
+
+  .f-right {
+    float: none;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .article-titles {
+    font-size: 20px;
+    margin-top: -40px;
+  }
+
+  .article-content h3 {
+    font-size: 17px;
+  }
+
+  .article-content p,
+  .article-content ol li {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .date-block {
+    padding: 5px 15px;
+  }
+
+  .date-number {
+    font-size: 20px;
+  }
+
+  .date-month {
+    font-size: 12px;
+  }
 }
