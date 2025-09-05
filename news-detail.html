@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title id="page-title">Cool School - Chi tiết tin tức</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="https://bizweb.dktcdn.net/100/347/562/themes/939147/assets/favicon.png?1706091862718"
+      type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- Owl Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <!-- jQuery UI CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link
+      href="assets/css/main.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all" />
+    <!-- Custom Styles for Breadcrumb -->
+    <style>
+      .breadcrumb li a:hover {
+        color: #ff6600 !important;
+      }
+    </style>
+    <!-- News detail specific CSS -->
+    <link
+      href="assets/css/program.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all" />
+    <link
+      href="assets/css/news.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all" />
+  </head>
+  <body class="news-detail-page">
+    <div class="page-container">
+      <header>
+        <!-- Top Bar -->
+        <div class="topbar wid_100">
+          <div class="container">
+            <div class="row">
+              <div class="topbar_left">
+                <ul class="contact_phone_email">
+                  <li class="phone_head">
+                    <span class="icon_style_base"
+                      ><i class="fas fa-mobile-alt"></i
+                    ></span>
+                    <a class="hai01" href="tel:19006750">19006750</a>
+                  </li>
+                  <li class="email_head">
+                    <span class="icon_style_base"
+                      ><i class="far fa-envelope"></i
+                    ></span>
+                    <a class="hai01" href="mailto:cooltteam@gmail.com"
+                      >cooltteam@gmail.com</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="topbar_right a-right">
+                <ul class="follow_option">
+                  <li>
+                    <a href="#" title="Facebook" class="social-circle">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" title="Twitter" class="social-circle">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" title="Google" class="social-circle">
+                      <i class="fab fa-google"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" title="Instagram" class="social-circle">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" title="Youtube" class="social-circle">
+                      <i class="fab fa-youtube"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mid Header with Navigation -->
+        <div class="mid-header wid_100">
+          <div class="container">
+            <div class="header-main">
+              <div class="menu-bar-h nav-mobile-button hidden-md hidden-lg">
+                <i class="fas fa-bars"></i>
+              </div>
+              <div class="logo">
+                <a href="index.html" class="logo-wrapper">
+                  <img src="assets/img/logo.webp" alt="Cool School" />
+                </a>
+              </div>
+              <div class="header-nav">
+                <ul class="item_big">
+                  <li class="nav-item">
+                    <a class="a-img" href="index.html">
+                      <span>Trang chủ</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="a-img" href="about.html">
+                      <span>Giới thiệu</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="a-img" href="#">
+                      <span>Chương trình học</span>
+                      <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="item_small hidden-sm hidden-xs">
+                      <li>
+                        <a href="standardProgram.html" title="">
+                          Chương trình chuẩn quốc tế
+                        </a>
+                      </li>
+                      <li>
+                        <a href="USAProgram.html" title="">
+                          Chương trình Văn - Thể - Mỹ
+                        </a>
+                      </li>
+                      <li>
+                        <a href="JapanProgram.html" title="">
+                          Chương trình văn hóa Nhật
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="a-img" href="recruit.html">
+                      <span>Tuyển sinh</span>
+                    </a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="a-img" href="news.html">
+                      <span>Tin tức &amp; Sự kiện</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="a-img" href="contact.html">
+                      <span>Liên hệ</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="header_search">
+                <form class="input-group search-bar search-form" role="search">
+                  <input
+                    type="search"
+                    name="query"
+                    value=""
+                    placeholder="Tìm kiếm tin tức..."
+                    class="input-group-field st-default-search-input search-text search-input"
+                    autocomplete="off" />
+                  <button
+                    type="submit"
+                    class="btn icon-fallback-text search-button">
+                    <span class="fas fa-search"></span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Divider -->
+      <div class="header-divider"></div>
+      <main>
+        <div id="menu-overlay" class=""></div>
+        <div class="breadcrumb_nobackground">
+          <section class="bread-crumb">
+            <span class="crumb-border"></span>
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 a-left">
+                  <ul class="breadcrumb">
+                    <li class="home">
+                      <a href="index.html"><span>Trang chủ</span></a>
+                      <span class="mr_lr">&nbsp;/&nbsp;</span>
+                    </li>
+                    <li>
+                      <a href="news.html"><span>Tin tức &amp; Sự kiện</span></a>
+                      <span class="mr_lr">&nbsp;/&nbsp;</span>
+                    </li>
+                    <li>
+                      <strong
+                        ><span id="breadcrumb-title"
+                          >Chi tiết tin tức</span
+                        ></strong
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Loading State -->
+        <div id="news-loading" class="container" style="display: none">
+          <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <p>Đang tải tin tức...</p>
+          </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="news-error" class="container" style="display: none">
+          <div class="error-container">
+            <p class="error-message">
+              Không thể tải tin tức. Vui lòng thử lại!
+            </p>
+            <button onclick="location.reload()" class="retry-btn">
+              Thử lại
+            </button>
+          </div>
+        </div>
+
+        <!-- Article Content -->
+        <div
+          id="news-content"
+          class="container article-wraper"
+          itemscope=""
+          itemtype="https://schema.org/Article"
+          style="display: none">
+          <meta id="meta-url" itemprop="mainEntityOfPage" content="" />
+          <meta id="meta-description" itemprop="description" content="" />
+          <meta id="meta-author" itemprop="author" content="Cool Team" />
+          <meta id="meta-headline" itemprop="headline" content="" />
+          <meta id="meta-image" itemprop="image" content="" />
+          <meta id="meta-published" itemprop="datePublished" content="" />
+          <meta id="meta-modified" itemprop="dateModified" content="" />
+
+          <div class="row">
+            <section class="right-content col-lg-12 col-sm-12 col-xs-12">
+              <div class="box-heading relative"></div>
+              <article class="article-main content_all">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="article-details">
+                      <h1 class="article-titles">
+                        <span id="article-title">Đang tải...</span>
+                      </h1>
+                      <div class="article-image">
+                        <span>
+                          <picture>
+                            <img
+                              id="article-image"
+                              class="img-fluid"
+                              src=""
+                              title=""
+                              alt="" />
+                          </picture>
+                        </span>
+                      </div>
+
+                      <div class="article-metadata">
+                        <div class="date-block">
+                          <span id="date-number" class="date-number">--</span>
+                          <span id="date-month" class="date-month">---</span>
+                        </div>
+                        <div class="metadata-content">
+                          <span class="author-info"
+                            >Đăng bởi:
+                            <span id="article-author">Cool Team</span></span
+                          >
+                          <h2 id="article-subtitle" class="article-subtitle">
+                            Đang tải...
+                          </h2>
+                          <div class="article-category">
+                            <span class="category-label">Danh mục:</span>
+                            <span id="article-category" class="category-value"
+                              >--</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="article-summary">
+                        <p id="article-summary">Đang tải mô tả...</p>
+                      </div>
+
+                      <div class="article-content">
+                        <div id="article-content-body" class="rte">
+                          <p>Đang tải nội dung...</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12">
+                    <div class="row row-noGutter tag-share">
+                      <div class="col-xs-12 col-sm-6 tag_article">
+                        <span class="icon_tag"><i class="fas fa-tag"></i></span>
+                        <div id="article-tags">
+                          <!-- Tags will be loaded here -->
+                        </div>
+                      </div>
+
+                      <div class="col-xs-12 col-sm-6 no-padding">
+                        <div class="social-sharing f-right">
+                          <div class="share-buttons">
+                            <a
+                              href="#"
+                              id="share-facebook"
+                              class="share-btn facebook"
+                              title="Chia sẻ lên Facebook">
+                              <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a
+                              href="#"
+                              id="share-twitter"
+                              class="share-btn twitter"
+                              title="Chia sẻ lên Twitter">
+                              <i class="fab fa-twitter"></i>
+                            </a>
+                            <a
+                              href="#"
+                              id="share-linkedin"
+                              class="share-btn linkedin"
+                              title="Chia sẻ lên LinkedIn">
+                              <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a
+                              href="#"
+                              onclick="copyToClipboard()"
+                              class="share-btn copy"
+                              title="Sao chép liên kết">
+                              <i class="fas fa-link"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-12">
+                    <div class="comment-section">
+                      <h3 class="comment-heading">Viết bình luận của bạn:</h3>
+
+                      <div class="comment-form-container">
+                        <div class="comment-form-row">
+                          <div class="comment-form-field">
+                            <input
+                              type="text"
+                              placeholder="Họ và tên"
+                              class="comment-input"
+                              name="Author"
+                              required />
+                          </div>
+
+                          <div class="comment-form-field">
+                            <input
+                              type="email"
+                              placeholder="Email"
+                              class="comment-input"
+                              name="Email"
+                              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
+                              required />
+                          </div>
+                        </div>
+
+                        <div class="comment-form-field">
+                          <textarea
+                            placeholder="Viết bình luận"
+                            class="comment-textarea"
+                            name="Body"
+                            rows="6"
+                            required></textarea>
+                        </div>
+
+                        <div class="comment-form-submit">
+                          <button type="submit" class="comment-submit-btn">
+                            Gửi bình luận
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Related News Section -->
+                  <div class="col-xs-12">
+                    <div class="related-news-section">
+                      <h3 class="related-heading">Tin tức liên quan</h3>
+                      <div id="related-news" class="related-news-grid">
+                        <!-- Related news will be loaded here -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="footer-main">
+          <div class="container">
+            <div class="footer-content">
+              <!-- Logo and School Info -->
+              <div class="footer-column footer-info">
+                <div class="footer-logo">
+                  <a href="index.html">
+                    <img src="assets/img/logo.webp" alt="Cool School" />
+                  </a>
+                </div>
+                <div class="school-details">
+                  <p class="school-name">Trường mầm non quốc tế Cool School</p>
+                  <p class="school-address">
+                    Trụ sở chính: Tòa nhà Ladeco, 266 Đội Cấn, phường Liễu Giai,
+                    Quận Ba Đình, Hà Nội
+                  </p>
+                  <p class="school-contact">
+                    Hotline: 1900 6750<br />
+                    Email: coolteam@gmail.com
+                  </p>
+                </div>
+              </div>
+              <!-- Support Navigation -->
+              <div class="footer-column footer-nav">
+                <h3 class="footer-title">HỖ TRỢ</h3>
+                <ul class="footer-links">
+                  <li><a href="index.html">Trang chủ</a></li>
+                  <li><a href="about.html">Giới thiệu</a></li>
+                  <li><a href="standardProgram.html">Chương trình học</a></li>
+                  <li><a href="recruit.html">Tuyển sinh</a></li>
+                  <li><a href="news.html">Tin tức & Sự kiện</a></li>
+                  <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+              </div>
+              <!-- Policy Navigation -->
+              <div class="footer-column footer-nav">
+                <h3 class="footer-title">CHÍNH SÁCH</h3>
+                <ul class="footer-links">
+                  <li><a href="index.html">Trang chủ</a></li>
+                  <li><a href="about.html">Giới thiệu</a></li>
+                  <li><a href="standardProgram.html">Chương trình học</a></li>
+                  <li><a href="recruit.html">Tuyển sinh</a></li>
+                  <li><a href="news.html">Tin tức & Sự kiện</a></li>
+                  <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+              </div>
+              <!-- Connect Navigation -->
+              <div class="footer-column footer-nav">
+                <h3 class="footer-title">KẾT NỐI VỚI CHÚNG TÔI</h3>
+                <ul class="footer-links">
+                  <li><a href="index.html">Trang chủ</a></li>
+                  <li><a href="about.html">Giới thiệu</a></li>
+                  <li><a href="standardProgram.html">Chương trình học</a></li>
+                  <li><a href="recruit.html">Tuyển sinh</a></li>
+                  <li><a href="news.html">Tin tức & Sự kiện</a></li>
+                  <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <div class="copyright-text">
+              © Bản quyền thuộc về <a href="#">Cool Team</a> | Cung cấp bởi
+              <a href="#">Sapo</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Chat Button -->
+    <div class="chat-button">
+      <div class="chat-bubble">
+        <span>Xin chào!</span>
+        <span>Mình có thể giúp gì bạn</span>
+      </div>
+      <div class="chat-icon">
+        <i class="fab fa-facebook-messenger"></i>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top-button">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+    <!-- News Detail Handler -->
+    <script type="module" src="assets/js/newsDetailHandler.js"></script>
+  </body>
+</html>

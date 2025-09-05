@@ -167,12 +167,12 @@ class NewsPageHandler {
     try {
       // Tạo categories từ dữ liệu có sẵn thay vì gọi API riêng
       const categories = [
-        { value: 'program', label: 'Chương trình học' },
-        { value: 'culture', label: 'Văn hóa' },
-        { value: 'events', label: 'Sự kiện' },
-        { value: 'education', label: 'Giáo dục' }
+        { value: "program", label: "Chương trình học" },
+        { value: "culture", label: "Văn hóa" },
+        { value: "events", label: "Sự kiện" },
+        { value: "education", label: "Giáo dục" },
       ];
-      
+
       this.renderCategories(categories);
     } catch (error) {
       console.error("Error loading categories:", error);
@@ -237,9 +237,14 @@ class NewsPageHandler {
     return `
       <div class="news-item" data-id="${news.id}">
         <div class="news-image">
-          <a href="#" onclick="viewNewsDetail(${news.id})" title="${news.title}">
+          <a href="#" onclick="viewNewsDetail(${news.id})" title="${
+      news.title
+    }">
             <img
-              src="${news.image || 'https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/default-news.jpg?v=1550778252097'}"
+              src="${
+                news.image ||
+                "https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/default-news.jpg?v=1550778252097"
+              }"
               alt="${news.title}"
               onerror="this.src='https://via.placeholder.com/400x250/cccccc/666666?text=No+Image'"
             />
@@ -250,7 +255,9 @@ class NewsPageHandler {
         </div>
         <div class="news-info">
           <h3>
-            <a href="#" onclick="viewNewsDetail(${news.id})" title="${news.title}">
+            <a href="#" onclick="viewNewsDetail(${news.id})" title="${
+      news.title
+    }">
               ${title}
             </a>
           </h3>
@@ -415,23 +422,8 @@ class NewsPageHandler {
 
 // Global function để xem chi tiết tin tức
 window.viewNewsDetail = async function (newsId) {
-  try {
-    const response = await NewsAPI.getNewsById(newsId);
-
-    if (response.success && response.data) {
-      // Có thể mở modal hoặc chuyển hướng đến trang chi tiết
-      console.log("News detail:", response.data);
-      // Tạm thời alert thông tin
-      alert(
-        `Tin tức: ${response.data.title}\n\nMô tả: ${response.data.description}`
-      );
-    } else {
-      alert("Không thể tải chi tiết tin tức!");
-    }
-  } catch (error) {
-    console.error("Error loading news detail:", error);
-    alert("Đã xảy ra lỗi khi tải chi tiết tin tức!");
-  }
+  // Chuyển hướng đến trang chi tiết với ID
+  window.location.href = `news-detail.html?id=${newsId}`;
 };
 
 // Khởi tạo khi DOM loaded
