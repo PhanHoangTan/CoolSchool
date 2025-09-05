@@ -524,6 +524,80 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
+
+    <!-- Search functionality for news detail page -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Search form handler
+        const searchForm = document.querySelector(".search-form");
+        const searchInput = document.querySelector(".search-input");
+        const searchButton = document.querySelector(".search-button");
+
+        if (searchForm) {
+          searchForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            handleNewsDetailSearch();
+          });
+        }
+
+        if (searchButton) {
+          searchButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            handleNewsDetailSearch();
+          });
+        }
+
+        // Xử lý khi nhấn Enter trong ô input
+        if (searchInput) {
+          searchInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              handleNewsDetailSearch();
+            }
+          });
+        }
+
+        function handleNewsDetailSearch() {
+          const keyword = searchInput ? searchInput.value.trim() : "";
+
+          // Reset nội dung ô tìm kiếm
+          if (searchInput) {
+            searchInput.value = "";
+          }
+
+          if (keyword) {
+            // Thêm timestamp để đảm bảo URL luôn mới
+            const timestamp = Date.now();
+            window.location.href = `news.html?search=${encodeURIComponent(
+              keyword
+            )}&t=${timestamp}`;
+          } else {
+            // Nếu không có từ khóa, chuyển đến trang news
+            window.location.href = "news.html";
+          }
+        }
+
+        // Copy to clipboard function for sharing
+        window.copyToClipboard = function () {
+          navigator.clipboard.writeText(window.location.href).then(
+            function () {
+              alert("Đã sao chép liên kết!");
+            },
+            function () {
+              // Fallback for older browsers
+              const textArea = document.createElement("textarea");
+              textArea.value = window.location.href;
+              document.body.appendChild(textArea);
+              textArea.select();
+              document.execCommand("copy");
+              document.body.removeChild(textArea);
+              alert("Đã sao chép liên kết!");
+            }
+          );
+        };
+      });
+    </script>
+
     <!-- News Detail Handler -->
     <script type="module" src="assets/js/newsDetailHandler.js"></script>
   </body>

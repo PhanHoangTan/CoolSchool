@@ -338,6 +338,61 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
+
+    <!-- Search functionality for news page -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Search form handler
+        const searchForm = document.querySelector(".search-form");
+        const searchInput = document.querySelector(".search-input");
+        const searchButton = document.querySelector(".search-button");
+
+        if (searchForm) {
+          searchForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            handleNewsSearch();
+          });
+        }
+
+        if (searchButton) {
+          searchButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            handleNewsSearch();
+          });
+        }
+
+        // Xử lý khi nhấn Enter trong ô input
+        if (searchInput) {
+          searchInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              handleNewsSearch();
+            }
+          });
+        }
+
+        function handleNewsSearch() {
+          const keyword = searchInput ? searchInput.value.trim() : "";
+
+          // Reset nội dung ô tìm kiếm
+          if (searchInput) {
+            searchInput.value = "";
+          }
+
+          if (keyword) {
+            // Thêm timestamp để đảm bảo trang luôn reload với từ khóa mới
+            const timestamp = Date.now();
+            window.location.href = `news.html?search=${encodeURIComponent(
+              keyword
+            )}&t=${timestamp}`;
+          } else {
+            // Nếu không có từ khóa, reload trang news
+            window.location.href = "news.html";
+          }
+        }
+      });
+    </script>
+
     <!-- News API Integration -->
     <script type="module" src="assets/js/newsPageHandler.js"></script>
   </body>

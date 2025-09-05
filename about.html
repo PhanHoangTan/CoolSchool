@@ -165,19 +165,17 @@
                 </ul>
               </div>
               <div class="header_search">
-                <form
-                  action="/search"
-                  method="get"
-                  class="input-group search-bar"
-                  role="search">
+                <form class="input-group search-bar search-form" role="search">
                   <input
                     type="search"
                     name="query"
                     value=""
-                    placeholder="Tìm kiếm..."
-                    class="input-group-field st-default-search-input search-text"
+                    placeholder="Tìm kiếm tin tức..."
+                    class="input-group-field st-default-search-input search-text search-input"
                     autocomplete="off" />
-                  <button type="submit" class="btn icon-fallback-text">
+                  <button
+                    type="submit"
+                    class="btn icon-fallback-text search-button">
                     <span class="fas fa-search"></span>
                   </button>
                 </form>
@@ -392,5 +390,59 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
+
+    <!-- Search functionality for about page -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Search form handler
+        const searchForm = document.querySelector(".search-form");
+        const searchInput = document.querySelector(".search-input");
+        const searchButton = document.querySelector(".search-button");
+
+        if (searchForm) {
+          searchForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            handleAboutSearch();
+          });
+        }
+
+        if (searchButton) {
+          searchButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            handleAboutSearch();
+          });
+        }
+
+        // Xử lý khi nhấn Enter trong ô input
+        if (searchInput) {
+          searchInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              handleAboutSearch();
+            }
+          });
+        }
+
+        function handleAboutSearch() {
+          const keyword = searchInput ? searchInput.value.trim() : "";
+
+          // Reset nội dung ô tìm kiếm
+          if (searchInput) {
+            searchInput.value = "";
+          }
+
+          if (keyword) {
+            // Thêm timestamp để đảm bảo URL luôn mới
+            const timestamp = Date.now();
+            window.location.href = `news.html?search=${encodeURIComponent(
+              keyword
+            )}&t=${timestamp}`;
+          } else {
+            // Nếu không có từ khóa, chuyển đến trang news
+            window.location.href = "news.html";
+          }
+        }
+      });
+    </script>
   </body>
 </html>

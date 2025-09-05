@@ -19,9 +19,33 @@ class NewsPageHandler {
    * Khởi tạo page handler
    */
   init() {
+    this.getSearchFromUrl();
     this.setupEventListeners();
-    this.loadNews();
     this.loadCategories();
+
+    // Nếu có từ khóa từ URL, tự động tìm kiếm
+    if (this.currentKeyword) {
+      this.searchNews(this.currentKeyword);
+    } else {
+      this.loadNews();
+    }
+  }
+
+  /**
+   * Lấy từ khóa tìm kiếm từ URL
+   */
+  getSearchFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchKeyword = urlParams.get("search");
+
+    if (searchKeyword) {
+      this.currentKeyword = searchKeyword;
+      // Cập nhật input search với từ khóa từ URL
+      const searchInput = document.querySelector(".search-input");
+      if (searchInput) {
+        searchInput.value = searchKeyword;
+      }
+    }
   }
 
   /**
