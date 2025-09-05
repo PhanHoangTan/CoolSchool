@@ -267,7 +267,7 @@
                     <span>Liên hệ với chúng tôi</span>
                   </h1>
                   <div id="pagelogin">
-                    <form method="post" action="" id="contact">
+                    <form method="post" action="" id="contact-form">
                       <div class="form-signup clearfix">
                         <div class="row group_contact">
                           <fieldset
@@ -277,7 +277,8 @@
                               type="text"
                               class="form-control"
                               required
-                              name="contact[Name]" />
+                              name="name"
+                              id="contact-name" />
                           </fieldset>
                           <fieldset
                             class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -286,20 +287,43 @@
                               type="email"
                               required
                               class="form-control"
-                              name="contact[email]" />
+                              name="email"
+                              id="contact-email" />
+                          </fieldset>
+                          <fieldset
+                            class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <input
+                              placeholder="Số điện thoại (tùy chọn)"
+                              type="tel"
+                              class="form-control"
+                              name="phone"
+                              id="contact-phone" />
+                          </fieldset>
+                          <fieldset
+                            class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <input
+                              placeholder="Chủ đề"
+                              type="text"
+                              class="form-control"
+                              name="subject"
+                              id="contact-subject" />
                           </fieldset>
                           <fieldset
                             class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <textarea
                               placeholder="Nội dung"
-                              name="contact[body]"
+                              name="body"
                               class="form-control content-area"
                               rows="5"
-                              required></textarea>
+                              required
+                              id="contact-body"></textarea>
                           </fieldset>
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <button type="submit" class="btn btn-primary">
-                              Gửi liên hệ
+                            <button type="submit" class="btn btn-primary" id="submit-btn">
+                              <span class="btn-text">Gửi liên hệ</span>
+                              <span class="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Đang gửi...
+                              </span>
                             </button>
                           </div>
                         </div>
@@ -412,11 +436,66 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
+    <!-- Contact API -->
+    <script src="assets/js/contactAPI.js"></script>
 
-    <!-- Search functionality for contact page -->
+    <!-- Contact Form Handler -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Search form handler
+        // Contact form handler
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+
+        if (contactForm) {
+          contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Disable submit button và hiện loading
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+
+            try {
+              // Lấy dữ liệu form
+              const formData = new FormData(contactForm);
+              const contactData = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone') || null,
+                subject: formData.get('subject') || null,
+                body: formData.get('body')
+              };
+
+              // Validate dữ liệu
+              if (!contactData.name || !contactData.email || !contactData.body) {
+                throw new Error('Vui lòng điền đầy đủ thông tin bắt buộc');
+              }
+
+              // Gửi API
+              const result = await contactAPI.createContact(contactData);
+              
+              if (result.success) {
+                showNotification('Gửi liên hệ thành công! Chúng tôi sẽ phản hồi sớm nhất có thể.', 'success');
+                contactForm.reset(); // Reset form
+              } else {
+                throw new Error(result.message || 'Có lỗi xảy ra');
+              }
+              
+            } catch (error) {
+              console.error('Contact submission error:', error);
+              showNotification(error.message || 'Có lỗi xảy ra khi gửi liên hệ. Vui lòng thử lại.', 'error');
+            } finally {
+              // Enable lại submit button
+              submitBtn.disabled = false;
+              btnText.style.display = 'inline';
+              btnLoading.style.display = 'none';
+            }
+          });
+        }
+
+        // Search form handler - giữ nguyên code cũ
         const searchForm = document.querySelector(".search-form");
         const searchInput = document.querySelector(".search-input");
         const searchButton = document.querySelector(".search-button");
