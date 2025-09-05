@@ -165,19 +165,17 @@
                 </ul>
               </div>
               <div class="header_search">
-                <form
-                  action="/search"
-                  method="get"
-                  class="input-group search-bar"
-                  role="search">
+                <form class="input-group search-bar search-form" role="search">
                   <input
                     type="search"
                     name="query"
                     value=""
-                    placeholder="Tìm kiếm..."
-                    class="input-group-field st-default-search-input search-text"
+                    placeholder="Tìm kiếm tin tức..."
+                    class="input-group-field st-default-search-input search-text search-input"
                     autocomplete="off" />
-                  <button type="submit" class="btn icon-fallback-text">
+                  <button
+                    type="submit"
+                    class="btn icon-fallback-text search-button">
                     <span class="fas fa-search"></span>
                   </button>
                 </form>
@@ -218,234 +216,24 @@
             <div class="content_all">
               <div class="page-header">
                 <h1 class="page-title">Tin tức</h1>
+                <div class="news-controls">
+                  <div class="results-info"></div>
+                  <div class="filter-controls">
+                    <select id="categoryFilter" class="category-filter">
+                      <option value="">Tất cả danh mục</option>
+                    </select>
+                  </div>
+                </div>
               </div>
 
               <div class="news-grid">
-                <!-- News Item 1 -->
-                <div
-                  class="news-item"
-                  onclick="window.location.href='ENJapanProgram.html';">
-                  <div class="news-image">
-                    <a href="ENJapanProgram.html" title="Hệ quốc tế Anh - Nhật">
-                      <img
-                        src="https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/1.jpg?v=1550778252097"
-                        alt="Hệ quốc tế Anh - Nhật" />
-                    </a>
-                  </div>
-                  <div class="news-date">
-                    <span>22/02/2019</span>
-                  </div>
-                  <div class="news-info">
-                    <h3>
-                      <a
-                        href="ENJapanProgram.html"
-                        title="Hệ quốc tế Anh - Nhật"
-                        >Hệ quốc tế Anh - Nhật</a
-                      >
-                    </h3>
-                    <div class="news-author">
-                      <span
-                        ><i class="fas fa-user"></i> Đăng bởi: Cool Team</span
-                      >
-                    </div>
-                    <div class="news-desc">
-                      <p>
-                        Bên cạnh tiếng Anh, tiếng Nhật cũng là một trong những
-                        ngôn ngữ của thời kỳ hội nhập toàn cầu. Tr...
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- News Item 2 -->
-                <div
-                  class="news-item"
-                  onclick="window.location.href='BilingualProgram.html';">
-                  <div class="news-image">
-                    <a href="BilingualProgram.html" title="Hệ đào tạo song ngữ">
-                      <img
-                        src="https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/6.jpg?v=1550778312287"
-                        alt="Hệ đào tạo song ngữ" />
-                    </a>
-                  </div>
-                  <div class="news-date">
-                    <span>22/02/2019</span>
-                  </div>
-                  <div class="news-info">
-                    <h3>
-                      <a
-                        href="BilingualProgram.html"
-                        title="Hệ đào tạo song ngữ"
-                        >Hệ đào tạo song ngữ</a
-                      >
-                    </h3>
-                    <div class="news-author">
-                      <span
-                        ><i class="fas fa-user"></i> Đăng bởi: Cool Team</span
-                      >
-                    </div>
-                    <div class="news-desc">
-                      <p>
-                        Với mong muốn giúp trẻ đa dạng ngôn ngữ trong thời kỳ
-                        hội nhập, Trường Mầm non Quốc tế Cool Schoo...
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- News Item 3 -->
-                <div
-                  class="news-item"
-                  onclick="window.location.href='EnEnProgram.html';">
-                  <div class="news-image">
-                    <a href="EnEnProgram.html" title="Hệ quốc tế Anh - Anh">
-                      <img
-                        src="https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/9.jpg?v=1550778282473"
-                        alt="Hệ quốc tế Anh - Anh" />
-                    </a>
-                  </div>
-                  <div class="news-date">
-                    <span>22/02/2019</span>
-                  </div>
-                  <div class="news-info">
-                    <h3>
-                      <a href="EnEnProgram.html" title="Hệ quốc tế Anh - Anh"
-                        >Hệ quốc tế Anh - Anh</a
-                      >
-                    </h3>
-                    <div class="news-author">
-                      <span
-                        ><i class="fas fa-user"></i> Đăng bởi: Cool Team</span
-                      >
-                    </div>
-                    <div class="news-desc">
-                      <p>
-                        Trong xu thế tiếng Anh đã trở thành ngôn ngữ toàn cầu,
-                        ngay từ khi còn nhỏ, các bậc phụ huynh và...
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- News Item 4 -->
-                <div
-                  class="news-item"
-                  onclick="window.location.href='standardProgram.html';">
-                  <div class="news-image">
-                    <a
-                      href="standardProgram.html"
-                      title="Chương trình học chuẩn quốc tế">
-                      <img
-                        src="https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/7.jpg?v=1550779824993"
-                        alt="Chương trình học chuẩn quốc tế" />
-                    </a>
-                  </div>
-                  <div class="news-date">
-                    <span>22/02/2019</span>
-                  </div>
-                  <div class="news-info">
-                    <h3>
-                      <a
-                        href="standardProgram.html"
-                        title="Chương trình học chuẩn quốc tế"
-                        >Chương trình học chuẩn quốc tế</a
-                      >
-                    </h3>
-                    <div class="news-author">
-                      <span
-                        ><i class="fas fa-user"></i> Đăng bởi: Cool Team</span
-                      >
-                    </div>
-                    <div class="news-desc">
-                      <p>
-                        Được thiết kế và triển khai theo triết lý giáo dục của
-                        tiến sĩ Maria Montessori&nbsp;(31/8/1870 –...
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- News Item 5 -->
-                <div
-                  class="news-item"
-                  onclick="window.location.href='USAProgram.html';">
-                  <div class="news-image">
-                    <a
-                      href="USAProgram.html"
-                      title="Chương trình Văn - Thể - Mỹ">
-                      <img
-                        src="https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/8.jpg?v=1550779730693"
-                        alt="Chương trình Văn - Thể - Mỹ" />
-                    </a>
-                  </div>
-                  <div class="news-date">
-                    <span>22/02/2019</span>
-                  </div>
-                  <div class="news-info">
-                    <h3>
-                      <a
-                        href="USAProgram.html"
-                        title="Chương trình Văn - Thể - Mỹ"
-                        >Chương trình Văn - Thể - Mỹ</a
-                      >
-                    </h3>
-                    <div class="news-author">
-                      <span
-                        ><i class="fas fa-user"></i> Đăng bởi: Cool Team</span
-                      >
-                    </div>
-                    <div class="news-desc">
-                      <p>
-                        Cùng với sự phát triển của chương trình học thuật,
-                        chương trình phát triển Văn – Thể – Mỹ cũng là...
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- News Item 6 -->
-                <div
-                  class="news-item"
-                  onclick="window.location.href='JapanProgram.html';">
-                  <div class="news-image">
-                    <a
-                      href="JapanProgram.html"
-                      title="Chương trình học văn hóa nhật">
-                      <img
-                        src="https://bizweb.dktcdn.net/thumb/large/100/347/562/articles/3.jpg?v=1550779664717"
-                        alt="Chương trình học văn hóa nhật" />
-                    </a>
-                  </div>
-                  <div class="news-date">
-                    <span>22/02/2019</span>
-                  </div>
-                  <div class="news-info">
-                    <h3>
-                      <a
-                        href="JapanProgram.html"
-                        title="Chương trình học văn hóa nhật"
-                        >Chương trình học văn hóa nhật</a
-                      >
-                    </h3>
-                    <div class="news-author">
-                      <span
-                        ><i class="fas fa-user"></i> Đăng bởi: Cool Team</span
-                      >
-                    </div>
-                    <div class="news-desc">
-                      <p>
-                        Kỹ năng sống là một trong những kiến thức nền tảng quan
-                        trọng nhất, quyết định sự tồn tại, phát t...
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <!-- News items will be loaded here by JavaScript -->
               </div>
 
               <div class="pagination-wrapper">
-                <ul class="pagination">
-                  <li class="active"><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">»</a></li>
-                </ul>
+                <div class="pagination">
+                  <!-- Pagination will be loaded here by JavaScript -->
+                </div>
               </div>
             </div>
           </div>
@@ -550,5 +338,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
+    <!-- News API Integration -->
+    <script type="module" src="assets/js/newsPageHandler.js"></script>
   </body>
 </html>
